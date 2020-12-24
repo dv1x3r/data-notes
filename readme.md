@@ -455,6 +455,7 @@ capitalize, count, startswith, endswith, find, format, lower, upper, lstrip, rst
 ## Stuff
 
 ### Cool Data Science terms
+
 * Correlation: attributes relations [-1, 1\]
 * Charjunk, Data-ink ratio: [effective data visualization](https://www.darkhorseanalytics.com/blog/data-looks-better-naked)
 * The Tableau Data Color RGB Values: [Color Blind 10](http://tableaufriction.blogspot.com/2012/11/finally-you-can-use-tableau-data-colors.html)
@@ -475,9 +476,35 @@ capitalize, count, startswith, endswith, find, format, lower, upper, lstrip, rst
 <br>
 
 ### Personal links
+
 [data-to-viz.com: leads you to the most appropriate graph for your data](https://www.data-to-viz.com/)  
 [Fourier Transforms With scipy.fft: Python Signal Processing – Real Python](https://realpython.com/python-scipy-fft/)  
 [Plot With Pandas: Python Data Visualization for Beginners – Real Python](https://realpython.com/pandas-plot-python/)  
 [Async IO in Python: A Complete Walkthrough – Real Python](https://realpython.com/async-io-python/)  
 [List Comrehensions (Представление списков RU)](https://webdevblog.ru/kogda-ispolzovat-list-comprehension-v-python/)  
 
+<br><hr><br>
+
+## Command Line (bash)
+
+| Description             | Syntax              | Arguments                                             |
+| ----------------------- | ------------------- | ----------------------------------------------------- |
+| Current time and date   | date                |                                                       |
+| Diff side to side       | diff -y file1 file2 | -q report only if differ, -y side by side             |
+| Execute from history    | history, !num, !!   |                                                       |
+| Clear screen            | clear               |                                                       |
+| Close terminal          | exit                |                                                       |
+| Print working directory | pwd                 |                                                       |
+| List the contents       | ls                  | -A all, -h size -l list, -p add / to dir              |
+| Change directory        | cd                  | ~, .., -                                              |
+| Make directory          | mkdir               |                                                       |
+| Remove empty directory  | rmdir               |                                                       |
+| Copy                    | cp                  | -i interactive, -r recursive                          |
+| Remove                  | rm                  | -i interactive, -r recursive                          |
+| Move                    | mv                  | -i interactive                                        |
+| Find                    | find                | [location\] -name ['filename'\] -iname ['icasename'\] |
+
+<br>
+
+### Glob Patterns and Wildcards
+\*, ?, [a-z\], [ranges and expressions](https://www.gnu.org/software/grep/manual/html_node/Character-Classes-and-Bracket-Expressions.html)
