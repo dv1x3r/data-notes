@@ -487,24 +487,88 @@ capitalize, count, startswith, endswith, find, format, lower, upper, lstrip, rst
 
 ## Command Line (bash)
 
-| Description             | Syntax              | Arguments                                             |
-| ----------------------- | ------------------- | ----------------------------------------------------- |
-| Current time and date   | date                |                                                       |
-| Diff side to side       | diff -y file1 file2 | -q report only if differ, -y side by side             |
-| Execute from history    | history, !num, !!   |                                                       |
-| Clear screen            | clear               |                                                       |
-| Close terminal          | exit                |                                                       |
-| Print working directory | pwd                 |                                                       |
-| List the contents       | ls                  | -A all, -h size -l list, -p add / to dir              |
-| Change directory        | cd                  | ~, .., -                                              |
-| Make directory          | mkdir               |                                                       |
-| Remove empty directory  | rmdir               |                                                       |
-| Copy                    | cp                  | -i interactive, -r recursive                          |
-| Remove                  | rm                  | -i interactive, -r recursive                          |
-| Move                    | mv                  | -i interactive                                        |
-| Find                    | find                | [location\] -name ['filename'\] -iname ['icasename'\] |
+| Description               | Syntax              | Arguments                                             |
+| ------------------------- | ------------------- | ----------------------------------------------------- |
+| Current time and date     | date                |                                                       |
+| Calendar                  | cal                 |                                                       |
+| Diff side to side         | diff -y file1 file2 | -q report only if differ, -y side by side             |
+| Execute from history      | history, !num, !!   |                                                       |
+| Clear screen              | clear               |                                                       |
+| Close terminal            | exit                |                                                       |
+| Print working directory   | pwd                 |                                                       |
+| List the contents         | ls \| la \| ll      | -A all, -h size -l list, -p add / to dir              |
+| Change directory          | cd                  | ~, .., -                                              |
+| Make directory            | mkdir               |                                                       |
+| Remove empty directory    | rmdir               |                                                       |
+| Copy                      | cp                  | -i interactive, -r recursive                          |
+| Remove                    | rm                  | -i interactive, -r recursive                          |
+| Move                      | mv                  | -i interactive                                        |
+| Find                      | find                | [location\] -name ['filename'\] -iname ['icasename'\] |
+| Username                  | whoami              |                                                       |
+| User info                 | id                  | -un                                                   |
+| Groups                    | groups              |                                                       |
+| Change mode (permissions) | chmod               | [ugoa\][+-=\][rwx\] files \| 777                      |
+| Show file permissions     | stat                |                                                       |
+| Run as superuser          | sudo                | -u username                                           |
+| Change owner              | chown               | [new_owner\][:new_group\] file...                     |
+
+<br>
+
+## Command Line Text Processing
+
+| Description                      | Syntax       | Arguments                                                                  |
+| -------------------------------- | ------------ | -------------------------------------------------------------------------- |
+| Python                           | python       | -c "print(42)"                                                             |
+| Command type                     | type         | -p path, -t type                                                           |
+| List aliases                     | compgen      | -a                                                                         |
+| Create alias                     | alias d=date |                                                                            |
+| Delete alias                     | unalias d    |                                                                            |
+| Manual                           | man          |                                                                            |
+| First manual line                | whatis       |                                                                            |
+| Manual built-in                  | help         |                                                                            |
+| Text page reader                 | less         | -S truncate                                                                |
+| Print head of files              | head         | -n lines                                                                   |
+| Print tail of files              | tail         | -n lines                                                                   |
+| Word count (lines, words, bytes) | wc           | -с bytes, -m chars, -l lines, -w words                                     |
+| Print as table                   | column       | -s separator, -t table                                                     |
+| Shuffle lines                    | shuf         | -n head                                                                    |
+| Determine file type              | file         |                                                                            |
+| Concatenate and print files      | cat \| tac   |                                                                            |
+| Sort and print files             | sort         | -r reverse, -u unique, -t separator, -k range, -g numeric                  |
+| Print columns of files           | cut          | -d separator, -f range                                                     |
+| Regex finder                     | grep         | -E extended, -h no-filename, -n show-line, -i ignore-case, -v non-matching |
+| Print to screen                  | echo         |                                                                            |
+| Print formatted to screen        | printf       |                                                                            |
+| Create a file                    | touch        |                                                                            |
+| Translate (replace symbols)      | tr           |                                                                            |
+
+<br>
+
+## Command Line Flows
+
+| Description                         | Syntax      |
+| ----------------------------------- | ----------- |
+| Redirect stdout (overwrite, append) | >, >>       |
+| Redirect stderr (overwrite, append) | 2>, 2>>     |
+| Redirect out and err                | > file 2>&1 |
+| Redirect stdin                      | <           |
+| Pipe left output to right input     | \|          |
+| Drop output                         | > /dev/null |
+| Current process descriptors         | /proc/$$/fd |
 
 <br>
 
 ### Glob Patterns and Wildcards
 \*, ?, [a-z\], [ranges and expressions](https://www.gnu.org/software/grep/manual/html_node/Character-Classes-and-Bracket-Expressions.html)
+
+<br>
+
+### Personal hotkeys
+
+| Description    | PowerShell | bash                          |
+| -------------- | ---------- | ----------------------------- |
+| Interrupt      | CTRL + C   | CTRL + C                      |
+| EOF            | CTRL + D   | CTRL + D                      |
+| Clear          | CTRL + L   | CTRL + L                      |
+| Clear input    | ESC        | CTRL + U <br> ESC + Backspace |
+| Commander info | CTRL + Q   | CTRL + X, Q                   |
