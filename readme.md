@@ -125,7 +125,7 @@ capitalize, count, startswith, endswith, find, format, lower, upper, lstrip, rst
 
 <br>
 
-### dt.strptime formats
+### [dt.strptime formats](https://strftime.org/)
 
 | Format | Description                                |
 | ------ | ------------------------------------------ |
@@ -407,48 +407,63 @@ capitalize, count, startswith, endswith, find, format, lower, upper, lstrip, rst
 
 ## Regex [regexr.com](https://regexr.com/)
 
-| Description                      | Syntax                                                                  |
-| -------------------------------- | ----------------------------------------------------------------------- |
-| Python module                    | import re \| re.search(pattern, string) \| re.findall(patttern, string) |
-| Regex pattern check              | s.str.contains(r'', na=False, flags=re.IGNORECASE) \| IGNORECASE = I    |
-| Regex pattern extract            | s.str.extract(r'', expand=True, flags) \| expand returns df             |
-| Regex pattern replace            | s.str.replace(r'', replace, flags)                                      |
-| Regex all patterns extract       | s.str.extractall(r'')                                                   |
-| Raw expression (prevents \\)     | r''                                                                     |
-| Escape                           | \                                                                       |
-| _                                |
-| <b>Character classes</b>         |
-| .                                | any character except newline                                            |
-| \w \d \s                         | word, digit, whitespace                                                 |
-| \W \D \S                         | not word, digit, whitespace                                             |
-| [abc\]                           | any of a, b, or c                                                       |
-| [^abc\]                          | not a, b, or c                                                          |
-| [a-g\]                           | character between a & g                                                 |
-| _                                |
-| <b>Anchors</b>                   |
-| ^abc$                            | start / end of the string                                               |
-| \b \B                            | word, not-word boundary                                                 |
-| _                                |
-| <b>Escaped characters</b>        |
-| \. \* \\\                        | escaped special characters                                              |
-| \\t \\n \\r                      | tab, linefeed, carriage return                                          |
-| _                                |
-| <b>Groups & Lookaround</b>       |
-| (abc)                            | capture group                                                           |
-| (?P<name\>abc)                   | named capture group                                                     |
-| \1                               | backreference to group #1                                               |
-| (?:abc)                          | non-capturing group                                                     |
-| (?=abc)                          | positive lookahead (is followed by abc)                                 |
-| (?!abc)                          | negative lookahead (is not followed by abc)                             |
-| (?<=abc)                         | positive lookahead (is preceded by abc)                                 |
-| (?<!abc)                         | negative lookahead (is not preceded by abc)                             |
-| _                                |
-| <b>Quantifiers & Alternation</b> |
-| a* a+ a?                         | 0 or more, 1 or more, 0 or 1                                            |
-| a{5} a{2,}                       | exactly five, two or more                                               |
-| a{1,3}                           | between one & three                                                     |
-| a+? a{2,}?                       | match as few as possible                                                |
-| ab\|cd                           | match ab or cd                                                          |
+| Description                  | Syntax                                                                  |
+| ---------------------------- | ----------------------------------------------------------------------- |
+| Python module                | import re \| re.search(pattern, string) \| re.findall(patttern, string) |
+| Regex pattern check          | s.str.contains(r'', na=False, flags=re.IGNORECASE) \| IGNORECASE = I    |
+| Regex pattern extract        | s.str.extract(r'', expand=True, flags) \| expand returns df             |
+| Regex pattern replace        | s.str.replace(r'', replace, flags)                                      |
+| Regex all patterns extract   | s.str.extractall(r'')                                                   |
+| Raw expression (prevents \\) | r''                                                                     |
+| Escape                       | \                                                                       |
+
+<br>
+
+| Character classes |                              |
+| ----------------- | ---------------------------- |
+| .                 | any character except newline |
+| \w \d \s          | word, digit, whitespace      |
+| \W \D \S          | not word, digit, whitespace  |
+| [abc\]            | any of a, b, or c            |
+| [^abc\]           | not a, b, or c               |
+| [a-g\]            | character between a & g      |
+
+<br>
+
+| Anchors |                           |
+| ------- | ------------------------- |
+| ^abc$   | start / end of the string |
+| \b \B   | word, not-word boundary   |
+
+<br>
+
+| Escaped characters |                                |
+| ------------------ | ------------------------------ |
+| \. \* \\\          | escaped special characters     |
+| \\t \\n \\r        | tab, linefeed, carriage return |
+
+<br>
+
+| Groups & Lookaround |                                             |
+| ------------------- | ------------------------------------------- |
+| (abc)               | capture group                               |
+| (?P<name\>abc)      | named capture group                         |
+| \1                  | backreference to group #1                   |
+| (?:abc)             | non-capturing group                         |
+| (?=abc)             | positive lookahead (is followed by abc)     |
+| (?!abc)             | negative lookahead (is not followed by abc) |
+| (?<=abc)            | positive lookahead (is preceded by abc)     |
+| (?<!abc)            | negative lookahead (is not preceded by abc) |
+
+<br>
+
+| Quantifiers & Alternation |                              |
+| ------------------------- | ---------------------------- |
+| a* a+ a?                  | 0 or more, 1 or more, 0 or 1 |
+| a{5} a{2,}                | exactly five, two or more    |
+| a{1,3}                    | between one & three          |
+| a+? a{2,}?                | match as few as possible     |
+| ab\|cd                    | match ab or cd               |
 
 <br><hr><br>
 
@@ -487,6 +502,8 @@ capitalize, count, startswith, endswith, find, format, lower, upper, lstrip, rst
 
 ## Command Line (bash)
 
+### Command Line Basics
+
 | Description               | Syntax              | Arguments                                             |
 | ------------------------- | ------------------- | ----------------------------------------------------- |
 | Current time and date     | date                |                                                       |
@@ -514,7 +531,7 @@ capitalize, count, startswith, endswith, find, format, lower, upper, lstrip, rst
 
 <br>
 
-## Command Line Text Processing
+### Command Line Text Processing
 
 | Description                      | Syntax       | Arguments                                                                  |
 | -------------------------------- | ------------ | -------------------------------------------------------------------------- |
@@ -544,7 +561,7 @@ capitalize, count, startswith, endswith, find, format, lower, upper, lstrip, rst
 
 <br>
 
-## Command Line Flows
+### Command Line Flows
 
 | Description                         | Syntax      |
 | ----------------------------------- | ----------- |
@@ -565,10 +582,50 @@ capitalize, count, startswith, endswith, find, format, lower, upper, lstrip, rst
 
 ### Personal hotkeys
 
-| Description    | PowerShell | bash                          |
-| -------------- | ---------- | ----------------------------- |
-| Interrupt      | CTRL + C   | CTRL + C                      |
-| EOF            | CTRL + D   | CTRL + D                      |
-| Clear          | CTRL + L   | CTRL + L                      |
-| Clear input    | ESC        | CTRL + U <br> ESC + Backspace |
-| Commander info | CTRL + Q   | CTRL + X, Q                   |
+| Description       | PowerShell | bash                          |
+| ----------------- | ---------- | ----------------------------- |
+| Interrupt         | CTRL + C   | CTRL + C                      |
+| EOF               | CTRL + D   | CTRL + D                      |
+| Clear             | CTRL + L   | CTRL + L                      |
+| Clear input       | ESC        | CTRL + U <br> ESC + Backspace |
+| Commander info    | CTRL + Q   | CTRL + X, I                   |
+| Commander extract | SHIFT + F2 |                               |
+
+<br><hr><br>
+
+## SQL
+
+* Data Query Language (DQL)
+  * Data Definition Language (DDL): `CREATE`, `ALTER`, and `DROP`
+  * Data Control Language (DCL): `GRANT`, `REVOKE`
+  * Data Manipulation Language (DML): `SELECT`, `INSERT`, `UPDATE`, `DELETE`
+
+[Fast distributed SQL query engine for big data analytics: https://trino.io/](https://trino.io/)
+
+``` sql
+select <cols, *>
+from t1
+where <condition>
+group by <cols>
+having <condition>
+order by <cols, numbers> [desc]
+limit 10;
+```
+
+| Description                   | Syntax                                                                                 |
+| ----------------------------- | -------------------------------------------------------------------------------------- |
+| Execution order               | `from` -> `where` -> `group by` -> `having` -> `select` -> `order by` -> `limit`       |
+| String concatenation (SQLite) | \|\|                                                                                   |
+| Aggregation functions         | count, sum, avg, min, max, len                                                         |
+| Rounding results              | round(<column, value\>, <n\>)                                                          |
+| Casting types                 | cast(<column, value\> as <type\>)                                                      |
+| Conditional logic             | `case when` <expression\> `then` <value1\> [...\] [`else` <value2\>\] `end as` <name\> |
+| IN Operator                   | <column, value\> in (<values\>)                                                        |
+
+<br>
+
+### [SQL Server date formats](http://www.sql-server-helper.com/tips/date-formats.aspx)
+``` sql
+select convert(varchar(8), getdate(), 112) AS [DateKey]
+select cast([YYYMMDD] as datetime) as [DateTime]
+```
