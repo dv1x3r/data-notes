@@ -370,6 +370,9 @@ capitalize, count, startswith, endswith, find, format, lower, upper, lstrip, rst
 | Histogram           | plt.hist(y_values, bins=int, range=(min, max))                 |
 | Box plot            | plt.boxplot(values)                                            |
 
+* Boxplot quartile index: (n+1) * 0.25; (n+1) * 0.75
+* Outliers boundaries: Q1 - 1.5 * IQR; Q3 + 1.5 * IQR
+
 <br><hr><br>
 
 ## Seaborn
@@ -477,7 +480,7 @@ capitalize, count, startswith, endswith, find, format, lower, upper, lstrip, rst
 * Kernel density estimation (KDE): better histogram
 * Small multiple: series of similar graphs or charts using the same scale and axes
 * Tidy data: each variable is a column, each observation is a row, and each type of observational unit is a table
-* Imputation: The technical name for filling in a missing value with a replacement value.
+* Imputation: The technical name for filling in a missing value with a replacement value
 
 <br>
 
@@ -540,6 +543,7 @@ capitalize, count, startswith, endswith, find, format, lower, upper, lstrip, rst
 | List aliases                     | compgen      | -a                                                                         |
 | Create alias                     | alias d=date |                                                                            |
 | Delete alias                     | unalias d    |                                                                            |
+| Locatae a command                | which        |                                                                            |
 | Manual                           | man          |                                                                            |
 | First manual line                | whatis       |                                                                            |
 | Manual built-in                  | help         |                                                                            |
@@ -600,7 +604,8 @@ capitalize, count, startswith, endswith, find, format, lower, upper, lstrip, rst
   * Data Control Language (DCL): `GRANT`, `REVOKE`
   * Data Manipulation Language (DML): `SELECT`, `INSERT`, `UPDATE`, `DELETE`
 
-[Fast distributed SQL query engine for big data analytics: https://trino.io/](https://trino.io/)
+* [sqlstyle.guide](https://www.sqlstyle.guide/)
+* [Fast distributed SQL query engine for big data analytics: https://trino.io/](https://trino.io/)
 
 ``` sql
 select <cols, *>
@@ -619,8 +624,15 @@ limit 10;
 | Aggregation functions         | count, sum, avg, min, max, len                                                         |
 | Rounding results              | round(<column, value\>, <n\>)                                                          |
 | Casting types                 | cast(<column, value\> as <type\>)                                                      |
+| Case conversion               | lower(), upper()                                                                       |
 | Conditional logic             | `case when` <expression\> `then` <value1\> [...\] [`else` <value2\>\] `end as` <name\> |
 | IN Operator                   | <column, value\> in (<values\>)                                                        |
+| Joining data                  | <inner, left, right, full (outer), cross\> join on <condition\>                        |
+| Combining rows                | union [all\], intersect, except                                                        |
+| Null operations               | is [not\] null                                                                         |
+| Like pattern                  | like '[pattern\] [%\]'                                                                 |
+| Named subquery                | with <name\> as <query\> [...\]                                                        |
+| Creating views                | create view <name\> as <query\>                                                        |
 
 <br>
 
