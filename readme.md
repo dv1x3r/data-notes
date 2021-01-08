@@ -641,3 +641,17 @@ limit 10;
 select convert(varchar(8), getdate(), 112) AS [DateKey]
 select cast([YYYMMDD] as datetime) as [DateTime]
 ```
+
+<br>
+
+### SQLite Shell
+
+| Description           | Syntax               |
+| --------------------- | -------------------- |
+| Open database         | sqlite3 <dbname.db\> |
+| Enable column headers | .headers on          |
+| Enable column output  | .mode column         |
+| Help                  | .help                |
+| Tables list           | .tables              |
+| Run in shell          | .shell <command\>    |
+| Quit                  | .quit                |
