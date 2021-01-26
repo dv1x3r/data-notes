@@ -1,6 +1,282 @@
-# Data Scientist 2020-2021
+# Data Science, Engineering, Machine Learning
 
-## Jupyter Shortcuts
+- [Data Science, Engineering, Machine Learning](#data-science-engineering-machine-learning)
+  - [Datasets](#datasets)
+  - [Shell](#shell)
+    - [Command Line with bash](#command-line-with-bash)
+    - [Command Line Shortcuts (Hotkeys)](#command-line-shortcuts-hotkeys)
+    - [Docker](#docker)
+  - [API](#api)
+    - [HTTP Request Status Codes](#http-request-status-codes)
+    - [API Querying with Python](#api-querying-with-python)
+  - [Regex](#regex)
+    - [Regexr.com](#regexrcom)
+    - [Regex with Python](#regex-with-python)
+  - [DAX and MS BI](#dax-and-ms-bi)
+  - [Python](#python)
+    - [Jupyter Shortcuts (Hotkeys)](#jupyter-shortcuts-hotkeys)
+    - [Python Basics](#python-basics)
+    - [Object-Oriented](#object-oriented)
+    - [NumPy Arrays](#numpy-arrays)
+    - [Pandas Transform and Clean](#pandas-transform-and-clean)
+  - [Data Visualization](#data-visualization)
+    - [Pandas](#pandas)
+    - [Seaborn](#seaborn)
+    - [Matplotlib](#matplotlib)
+  - [SQL](#sql)
+    - [DML Operations](#dml-operations)
+    - [DDL Operations](#ddl-operations)
+    - [Normalization](#normalization)
+    - [SQL with Python](#sql-with-python)
+    - [SQLite Shell](#sqlite-shell)
+    - [SQL Server Snippets](#sql-server-snippets)
+  - [Business](#business)
+    - [Communication](#communication)
+    - [Metrics](#metrics)
+  - [Probability, Statistics and Math](#probability-statistics-and-math)
+    - [Analysis Criterias and Helpers](#analysis-criterias-and-helpers)
+    - [Box Plot Hints](#box-plot-hints)
+    - [Statistics with Python](#statistics-with-python)
+  - [Machine Learning](#machine-learning)
+
+<br><hr><br>
+
+## Datasets
+* [Data.gov](https://www.data.gov/) - A directory of government data downloads
+* [/r/datasets](https://reddit.com/r/datasets) - A subreddit that has hundreds of interesting data sets
+* [Awesome datasets](https://github.com/caesar0301/awesome-public-datasets) - A list of data sets hosted on GitHub
+* [rs.io](http://rs.io/100-interesting-data-sets-for-statistics/) - A great blog post with hundreds of interesting data sets
+
+<br>
+
+## Shell
+
+* [Glob Patterns and Wildcards](https://www.gnu.org/software/grep/manual/html_node/Character-Classes-and-Bracket-Expressions.html): *, ?, [a-z\]
+
+<br>
+
+### Command Line with bash
+
+| Bash Basics               | Syntax              | Arguments                                             |
+| ------------------------- | ------------------- | ----------------------------------------------------- |
+| Current time and date     | date                |                                                       |
+| Calendar                  | cal                 |                                                       |
+| Diff side to side         | diff -y file1 file2 | -q report only if differ, -y side by side             |
+| Execute from history      | history, !num, !!   |                                                       |
+| Clear screen              | clear               |                                                       |
+| Close terminal            | exit                |                                                       |
+| Print working directory   | pwd                 |                                                       |
+| List the contents         | ls \| la \| ll      | -A all, -h size -l list, -p add / to dir              |
+| Change directory          | cd                  | ~, .., -                                              |
+| Make directory            | mkdir               |                                                       |
+| Remove empty directory    | rmdir               |                                                       |
+| Copy                      | cp                  | -i interactive, -r recursive                          |
+| Remove                    | rm                  | -i interactive, -r recursive                          |
+| Move                      | mv                  | -i interactive                                        |
+| Find                      | find                | [location\] -name ['filename'\] -iname ['icasename'\] |
+| Username                  | whoami              |                                                       |
+| User info                 | id                  | -un                                                   |
+| Groups                    | groups              |                                                       |
+| Change mode (permissions) | chmod               | [ugoa\][+-=\][rwx\] files \| 777                      |
+| Show file permissions     | stat                |                                                       |
+| Run as superuser          | sudo                | -u username                                           |
+| Change owner              | chown               | [new_owner\][:new_group\] file...                     |
+
+<br>
+
+| Text Processing                  | Syntax       | Arguments                                                                  |
+| -------------------------------- | ------------ | -------------------------------------------------------------------------- |
+| Python                           | python       | -c "print(42)"                                                             |
+| Command type                     | type         | -p path, -t type                                                           |
+| List aliases                     | compgen      | -a                                                                         |
+| Create alias                     | alias d=date |                                                                            |
+| Delete alias                     | unalias d    |                                                                            |
+| Locatae a command                | which        |                                                                            |
+| Manual                           | man          |                                                                            |
+| First manual line                | whatis       |                                                                            |
+| Manual built-in                  | help         |                                                                            |
+| Text page reader                 | less         | -S truncate                                                                |
+| Print head of files              | head         | -n lines                                                                   |
+| Print tail of files              | tail         | -n lines                                                                   |
+| Word count (lines, words, bytes) | wc           | -с bytes, -m chars, -l lines, -w words                                     |
+| Print as table                   | column       | -s separator, -t table                                                     |
+| Shuffle lines                    | shuf         | -n head                                                                    |
+| Determine file type              | file         |                                                                            |
+| Concatenate and print files      | cat \| tac   |                                                                            |
+| Sort and print files             | sort         | -r reverse, -u unique, -t separator, -k range, -g numeric                  |
+| Print columns of files           | cut          | -d separator, -f range                                                     |
+| Regex finder                     | grep         | -E extended, -h no-filename, -n show-line, -i ignore-case, -v non-matching |
+| Print to screen                  | echo         |                                                                            |
+| Print formatted to screen        | printf       |                                                                            |
+| Create a file                    | touch        |                                                                            |
+| Translate (replace symbols)      | tr           |                                                                            |
+
+<br>
+
+| Command Line Flow                   | Syntax      |
+| ----------------------------------- | ----------- |
+| Redirect stdout (overwrite, append) | >, >>       |
+| Redirect stderr (overwrite, append) | 2>, 2>>     |
+| Redirect out and err                | > file 2>&1 |
+| Redirect stdin                      | <           |
+| Pipe left output to right input     | \|          |
+| Drop output                         | > /dev/null |
+| Current process descriptors         | /proc/$$/fd |
+
+<br>
+
+### Command Line Shortcuts (Hotkeys)
+
+| Command           | PowerShell | bash                          |
+| ----------------- | ---------- | ----------------------------- |
+| Interrupt         | CTRL + C   | CTRL + C                      |
+| EOF               | CTRL + D   | CTRL + D                      |
+| Clear             | CTRL + L   | CTRL + L                      |
+| Clear input       | ESC        | CTRL + U <br> ESC + Backspace |
+| Commander info    | CTRL + Q   | CTRL + X, I                   |
+| Commander extract | SHIFT + F2 |                               |
+
+<br>
+
+### Docker
+
+| Command      | Syntax                                                                       |
+| ------------ | ---------------------------------------------------------------------------- |
+| Compose file | docker-compose [-f docker-compose.dev.yml\] <up, down, start, build, config> |
+
+<br><hr><br>
+
+## API
+
+* [What is OAuth? Definition and How it Works](https://www.varonis.com/blog/what-is-oauth/)
+* [Scraping Client Side Rendered Data with Python and Selenium](https://sadesmith.com/2018/06/15/blog/scraping-client-side-rendered-data-with-python-and-selenium)
+
+<br>
+
+### HTTP Request Status Codes
+
+| Status Code | Description       |
+| ----------- | ----------------- |
+| 200         | OK                |
+| 201         | POST OK           |
+| 204         | DELETE OK         |
+| 301         | Redirect          |
+| 400         | Bad request       |
+| 401         | Not authenticated |
+| 403         | Forbidden         |
+| 404         | Not found         |
+
+<br>
+
+### API Querying with Python
+
+| API Basics               | Syntax                                   |
+| ------------------------ | ---------------------------------------- |
+| Import module            | import requests                          |
+| GET Request              | requests.get(url, params={}, headers={}) |
+| POST Request             | requests.post(url, json=payload)         |
+| PUT/PATCH Request        | requests.patch(url, json=payload)        |
+| DELETE Request           | requests.delete(url)                     |
+| Status                   | response.status_code                     |
+| Content in String        | response.content                         |
+| Request/Response in JSON | response.json()                          |
+| Content-Type             | response.headers['content-type'\]        |
+
+<br>
+
+| Scrapping Basics             | Syntax                                                  |
+| ---------------------------- | ------------------------------------------------------- |
+| Import module                | from bs4 import BeautifulSoup                           |
+| Initialize the parser        | parser = BeautifulSoup(response_content, 'html.parser') |
+| Get the body tag             | parser.body                                             |
+| Get the inside text of a tag | parser.head.title.text                                  |
+| Find specific tags           | parser.body.find_all('p', id='i', class_='c')           |
+| Find all tags by selectors   | parser.body.select('.c')                                |
+
+<br><hr><br>
+
+## Regex
+
+### [Regexr.com](https://regexr.com/)
+
+| Character classes |                              |
+| ----------------- | ---------------------------- |
+| .                 | any character except newline |
+| \w \d \s          | word, digit, whitespace      |
+| \W \D \S          | not word, digit, whitespace  |
+| [abc\]            | any of a, b, or c            |
+| [^abc\]           | not a, b, or c               |
+| [a-g\]            | character between a & g      |
+
+<br>
+
+| Anchors |                           |
+| ------- | ------------------------- |
+| ^abc$   | start / end of the string |
+| \b \B   | word, not-word boundary   |
+
+<br>
+
+| Escaped characters |                                |
+| ------------------ | ------------------------------ |
+| \. \* \\\          | escaped special characters     |
+| \\t \\n \\r        | tab, linefeed, carriage return |
+
+<br>
+
+| Groups & Lookaround |                                             |
+| ------------------- | ------------------------------------------- |
+| (abc)               | capture group                               |
+| (?P<name\>abc)      | named capture group                         |
+| \1                  | backreference to group #1                   |
+| (?:abc)             | non-capturing group                         |
+| (?=abc)             | positive lookahead (is followed by abc)     |
+| (?!abc)             | negative lookahead (is not followed by abc) |
+| (?<=abc)            | positive lookahead (is preceded by abc)     |
+| (?<!abc)            | negative lookahead (is not preceded by abc) |
+
+<br>
+
+| Quantifiers & Alternation |                              |
+| ------------------------- | ---------------------------- |
+| a* a+ a?                  | 0 or more, 1 or more, 0 or 1 |
+| a{5} a{2,}                | exactly five, two or more    |
+| a{1,3}                    | between one & three          |
+| a+? a{2,}?                | match as few as possible     |
+| ab\|cd                    | match ab or cd               |
+
+<br>
+
+### Regex with Python
+
+| Description                  | Syntax                                                                  |
+| ---------------------------- | ----------------------------------------------------------------------- |
+| Python module                | import re \| re.search(pattern, string) \| re.findall(patttern, string) |
+| Regex pattern check          | s.str.contains(r'', na=False, flags=re.IGNORECASE) \| IGNORECASE = I    |
+| Regex pattern extract        | s.str.extract(r'', expand=True, flags) \| expand returns df             |
+| Regex pattern replace        | s.str.replace(r'', replace, flags)                                      |
+| Regex all patterns extract   | s.str.extractall(r'')                                                   |
+| Raw expression (prevents \\) | r''                                                                     |
+| Escape                       | \                                                                       |
+
+<br><hr><br>
+
+## DAX and MS BI
+
+* [SQLBI.com](https://www.sqlbi.com/)
+* [DAX Patterns](https://www.daxpatterns.com/patterns/)
+* [Kapacity Churn Risk Report in Power BI](https://powerbi.microsoft.com/en-us/partner-showcase/kapacity-a-s-sales-report-demo/)
+* [Skateboard Report in Power BI](https://powerbi.tips/product/scrims-msft-skateboard-report-free/)
+
+<br><hr><br>
+
+## Python
+
+* [List Comrehensions (Представление списков RU)](https://webdevblog.ru/kogda-ispolzovat-list-comprehension-v-python/)
+
+<br>
+
+### Jupyter Shortcuts (Hotkeys)
 
 | Command Mode (press Esc to enable)                                                       | Edit Mode (press Enter to enable)      |
 | ---------------------------------------------------------------------------------------- | -------------------------------------- |
@@ -49,11 +325,22 @@
 | Shift-Space: scroll notebook up                                                          |
 | Space: scroll notebook down                                                              |
 
-<br><hr><br>
+<br>
 
-## Cleaning and Preparing
+### Python Basics
 
-| Description                                                      | Syntax                               |
+| Import Modules                         | Syntax                         |
+| -------------------------------------- | ------------------------------ |
+| Importing a whole module               | import csv                     |
+| Importing a whole module with an alias | import csv as c                |
+| Importing a single definition          | from csv import reader         |
+| Importing multiple definitions         | from csv import reader, writer |
+| Importing all definitions              | from csv import *              |
+| Reimport a module                      | pd = importlib.reload(pandas)  |
+
+<br>
+
+| String Basics                                                    | Syntax                               |
 | ---------------------------------------------------------------- | ------------------------------------ |
 | Replace substring within a string                                | <string\>.replace(substring, string) |
 | Convert to title cases (capitalize every letter after every dot) | <string\>.title()                    |
@@ -61,21 +348,84 @@
 | Split a string into a list of strings                            | <string\>.split(separator)           |
 | Slice characters from a string by position                       | <string\>[:5\]                       |
 
-<br><hr><br>
+<br>
 
-## Basis
+* String functions: `capitalize`, `count`, `startswith`, `endswith`, `find`, `format`, `lower`, `upper`, `lstrip`, `rstrip`, `strip`, `replace`, `split`, `swapcase`, `title`, `zfill`;
 
-| Description                                                             | Syntax                         |
+<br>
+
+| String interpolation                                                    | Syntax                         |
 | ----------------------------------------------------------------------- | ------------------------------ |
 | Insert values into a string in order                                    | "{} {}".format(value, value)   |
 | Insert values into a string by position                                 | "{0} {1}".format(value, value) |
 | Insert values into a string by name                                     | "{name}".format(name="value")  |
 | Format specification for precision of two decimal places                | "{:.2f}".format(float)         |
 | Order for format specification when using precision and comma separator | "{:,.2f}".format(float)        |
+| Python 3.6 String Interpolation                                         | f"Hello {variable}"            |
 
-<br><hr><br>
+<br>
 
-## Object-Oriented
+| Dates and Times Basics             | Syntax                                                     |
+| ---------------------------------- | ---------------------------------------------------------- |
+| Import module                      | import datetime as dt                                      |
+| Instantiating dt.datetime          | dt.datetime(year, month, day)                              |
+| Creating dt.datetime from a string | dt.datetime.strptime("day/month/year", "%d/%m/%Y")         |
+| Converting dt.datetime to a string | dt_object.strftime("%d/%m/%Y")                             |
+| Instantiating a dt.time            | dt.time(hour=int, minute=int, second=int, microsecond=int) |
+| Retrieving a part of a date        | dt_object.day                                              |
+| Retrieving a date                  | dt_object.date()                                           |
+| Instantiating a dt.timedelta       | dt.timedelta(weeks=3)                                      |
+
+<br>
+
+| Dates and Times Math  | Type      |
+| --------------------- | --------- |
+| datetime - datetime   | timedelta |
+| datetime - timedelta  | datetime  |
+| datetime + timedelta  | datetime  |
+| timedelta + timedelta | timedelta |
+| timedelta - timedelta | timedelta |
+
+<br>
+
+| [Format](https://strftime.org/) | Description                                |
+| ------------------------------- | ------------------------------------------ |
+| %d                              | Day of the month as a zero-padded number   |
+| %A                              | Day of the week as a word                  |
+| %m                              | Month as a zero-padded number              |
+| %Y                              | Year as four-digit number                  |
+| %y                              | Year as two-digit number with zero-padding |
+| %B                              | Month as a word                            |
+| %H                              | Hour in 24 hour time as zero-padded number |
+| %p                              | a.m. or p.m.                               |
+| %I                              | Hour in 12 hour time as zero-padded number |
+| %M                              | Minute as a zero-padded number             |
+
+<br>
+
+| JSON Basics           | Syntax                                    |
+| --------------------- | ----------------------------------------- |
+| Import module         | import json                               |
+| JSON string to Object | json.loads('json')                        |
+| JSON file to Object   | json.load(open('path'))                   |
+| Object to JSON string | json.dumps(obj, sort_keys=True, indent=4) |
+| Dictionary keys       | obj.keys()                                |
+| Delete key            | del obj[key\]                             |
+
+<br>
+
+| List Comprehansions and Lambdas | Syntax                                                                                           |
+| ------------------------------- | ------------------------------------------------------------------------------------------------ |
+| List comprehension              | [i * 10 for i in [0,1,2,3,4,5\] if i > 0\]                                                       |
+| Functions on Objects            | min\|max\|sorted(obj, key=function, reverse=True) \| one argument function extracts scalar value |
+| Lambda function                 | f = lambda x, y: x * y                                                                           |
+| Ternary operator                | return <val\> if <expression\> else None                                                         |
+
+<br>
+
+### Object-Oriented
+
+<br>
 
 ``` python
 class MyClass():
@@ -89,74 +439,11 @@ mc.add_20()
 print(mc.attribute_1)
 ```
 
-<br><hr><br>
-
-## Importing
-
-| Description                            | Syntax                         |
-| -------------------------------------- | ------------------------------ |
-| Importing a whole module               | import csv                     |
-| Importing a whole module with an alias | import csv as c                |
-| Importing a single definition          | from csv import reader         |
-| Importing multiple definitions         | from csv import reader, writer |
-| Importing all definitions              | from csv import *              |
-| Reimport a module                      | pd = importlib.reload(pandas)  |
-
-<br><hr><br>
-
-## String functions
-
-capitalize, count, startswith, endswith, find, format, lower, upper, lstrip, rstrip, strip, replace, split, swapcase, title, zfill
-
-<br><hr><br>
-
-## Dates and Times
-
-| Description                        | Syntax                                                     |
-| ---------------------------------- | ---------------------------------------------------------- |
-| Import module                      | import datetime as dt                                      |
-| Instantiating dt.datetime          | dt.datetime(year, month, day)                              |
-| Creating dt.datetime from a string | dt.datetime.strptime("day/month/year", "%d/%m/%Y")         |
-| Converting dt.datetime to a string | dt_object.strftime("%d/%m/%Y")                             |
-| Instantiating a dt.time            | dt.time(hour=int, minute=int, second=int, microsecond=int) |
-| Retrieving a part of a date        | dt_object.day                                              |
-| Retrieving a date                  | dt_object.date()                                           |
-| Instantiating a dt.timedelta       | dt.timedelta(weeks=3)                                      |
-
 <br>
 
-### [dt.strptime formats](https://strftime.org/)
+### NumPy Arrays
 
-| Format | Description                                |
-| ------ | ------------------------------------------ |
-| %d     | Day of the month as a zero-padded number   |
-| %A     | Day of the week as a word                  |
-| %m     | Month as a zero-padded number              |
-| %Y     | Year as four-digit number                  |
-| %y     | Year as two-digit number with zero-padding |
-| %B     | Month as a word                            |
-| %H     | Hour in 24 hour time as zero-padded number |
-| %p     | a.m. or p.m.                               |
-| %I     | Hour in 12 hour time as zero-padded number |
-| %M     | Minute as a zero-padded number             |
-
-<br>
-
-### Operations
-
-| Operation             | Type      |
-| --------------------- | --------- |
-| datetime - datetime   | timedelta |
-| datetime - timedelta  | datetime  |
-| datetime + timedelta  | datetime  |
-| timedelta + timedelta | timedelta |
-| timedelta - timedelta | timedelta |
-
-<br><hr><br>
-
-## NumPy
-
-| Description                               | Syntax                                      |
+| NumPy Selecting                           | Syntax                                      |
 | ----------------------------------------- | ------------------------------------------- |
 | Import module                             | import numpy as np                          |
 | Convert a list of lists into a ndarray    | np.array(list(csv.reader(open(file, "r")))) |
@@ -168,19 +455,7 @@ capitalize, count, startswith, endswith, find, format, lower, upper, lstrip, rst
 
 <br>
 
-### 1-D statistics
-
-* Vector math: + - * /
-* ndarray.min()
-* ndarray.max()
-* ndarray.mean()
-* ndarray.sum()
-
-<br><hr><br>
-
-## Boolean Indexing
-
-| Description                                      | Syntax                                                                 |
+| NumPy Boolean Indexing                           | Syntax                                                                 |
 | ------------------------------------------------ | ---------------------------------------------------------------------- |
 | Reading in a CSV file                            | np.genfromtxt('.csv', delimiter=',', skip_header=1)                    |
 | Creating a Boolean array from filtering criteria | np.array([2,4,6,8\]) < 5                                               |
@@ -189,31 +464,41 @@ capitalize, count, startswith, endswith, find, format, lower, upper, lstrip, rst
 | Assigning values in a 2D ndarray using indices   | ndarr[1,1\] = 1 \| ndarr[:,0\] = 1 \| ndarr[:,7\] = ndarr[:,7\].mean() |
 | Assigning values using Boolean arrays            | ndarr[ndarr[:,5\] == 2, 15\] = 1                                       |
 
-<br><hr><br>
+<br>
 
-## Pandas
-
-| Description                             | Syntax                                                                            |
-| --------------------------------------- | --------------------------------------------------------------------------------- |
-| Import module                           | import pandas as pd                                                               |
-| Reading a file into a dataframe         | pd.read_csv('.csv', index_col=0, encoding='') \| Latin-1 \| UTF-8 \| Windows-1251 |
-| Reading a JSON into a dataframe         | pd.read_json()                                                                    |
-| Exporting data                          | df.to_csv('.csv', index=False)                                                    |
-| Dataframe object info                   | df.info(memory_usage='deep')                                                      |
-| Describing a dataframe/series object    | df.describe(include='all') \| s.describe()                                        |
-| Returning a dataframe/series data types | df.dtypes \| s.dtype()                                                            |
-| Returning the dimensions of a dataframe | dt.shape                                                                          |
-| Create dataframe/series                 | pd.DataFrame({'col': []}) \| pd.Series([])                                        |
-| Series to dataframe                     | s.to_frame('col')                                                                 |
-| Serios to list                          | s.tolist()                                                                        |
+| NumPy 1D Statistics | Syntax                               |
+| ------------------- | ------------------------------------ |
+| Vectorized math     | + - * /                              |
+| Functions           | ndarray .min() .max() .mean() .sum() |
 
 <br>
 
-### Pandas select values
+### Pandas Transform and Clean
 
-| Description                      | Syntax                                   |
+* Tidy data: each variable is a column, each observation is a row, and each type of observational unit is a table
+* Imputation: The technical name for filling in a missing value with a replacement value
+
+<br>
+
+| Pandas Information Basics               | Syntax                                                              |
+| --------------------------------------- | ------------------------------------------------------------------- |
+| Import module                           | import pandas as pd                                                 |
+| Reading a file into a dataframe         | pd.read_csv('.csv', index_col=0, parse_dates=['col'\], encoding='') |
+| Reading a JSON into a dataframe         | pd.read_json()                                                      |
+| Exporting data                          | df.to_csv('.csv', index=False)                                      |
+| Dataframe object info                   | df.info(memory_usage='deep')                                        |
+| Describing a dataframe/series object    | df.describe(include='all') \| s.describe()                          |
+| Returning a dataframe/series data types | df.dtypes \| s.dtype()                                              |
+| Returning the dimensions of a dataframe | dt.shape                                                            |
+| Create dataframe/series                 | pd.DataFrame({'col': []}) \| pd.Series([])                          |
+| Series to dataframe/list                | s.to_frame('col')  \| s.tolist()                                    |
+
+<br>
+
+| Pandas Select Operations         | Syntax                                   |
 | -------------------------------- | ---------------------------------------- |
 | Selecting the first n rows       | df.head(5)                               |
+| Selecting random n rows          | df.sample(5)                             |
 | Selecting a single column        | df['col'\]                               |
 | Selecting multiple columns       | df[['col', 'col2'\]\]                    |
 | Shorthand Convention for columns | df['col'\] \| df[['col', 'col2'\]\]      |
@@ -223,25 +508,23 @@ capitalize, count, startswith, endswith, find, format, lower, upper, lstrip, rst
 
 <br>
 
-### Pandas column operations
-
-| Description                                | Syntax                                                     |
+| Pandas Missing Values Handling             | Syntax                                                     |
 | ------------------------------------------ | ---------------------------------------------------------- |
 | Unique value counts for a dataframe/series | s.unique() \| s.value_counts(dropna=False)                 |
 | Selecting null and non-null values         | s.isnull() \| s.notnull()                                  |
 | Selecting null rows                        | df.isnull().any(axis=1)                                    |
 | Renaming an existing column                | df.rename(columns={'src_name': 'dest_name'}, inplace=True) |
-| Dropping an existing column                | df.drop(columns=['src_name'\], inplace=True)               |
+| Dropping an existing column                | df.drop(labels=['row'\], columns=['col'\], inplace=True)   |
 | Dropping missing values                    | df.dropna(axis=0, thresh=number_of_records, inplace=True)  |
 | Show duplicated rows                       | df.duplicated(cols)                                        |
 | Drop duplicated rows                       | df.drop_duplicates(cols)                                   |
-| Fill missing values                        | s.fillna(value)                                            |
+| Fill missing values                        | df.fillna(value) \| s.fillna(value)                        |
+| Reset index column                         | df.reset_index(drop=True, inplace=True)                    |
+| Renaming an index                          | df.rename_axis(None, axis=0)                               |
 
 <br>
 
-### Pandas boolean stuff
-
-| Description                             | Syntax                                 |
+| Pandas Boolean Masks Operations         | Syntax                                 |
 | --------------------------------------- | -------------------------------------- |
 | In operator                             | df['col'\].isin(['val1', 'val2'\])     |
 | Between method                          | df['col'\].between(val1, val2)         |
@@ -251,21 +534,18 @@ capitalize, count, startswith, endswith, find, format, lower, upper, lstrip, rst
 
 <br>
 
-### Pandas sorting and converting
-
-| Description                     | Syntax                         |
-| ------------------------------- | ------------------------------ |
-| Sorting by index column         | df.sort_index(ascending=False) |
-| Sorting by column values        | s.sort_values()                |
-| Converting column to datetime   | pd.to_datetime(series)         |
-| Converting column to float/int  | s.astype(float/int)            |
-| Stack multiple columns into one | df.stack(dropna=False)         |
+| Pandas Sort and Convert Basics  | Syntax                                  |
+| ------------------------------- | --------------------------------------- |
+| Sorting by index column         | df.sort_index(ascending=False)          |
+| Sorting by column values        | df.sort_values(ascending=False)         |
+| Converting column to datetime   | pd.to_datetime(series, errors="coerce") |
+| Converting column to numeric    | pd.to_numeric(series, errors="coerce")  |
+| Converting column to float/int  | s.astype(float/int)                     |
+| Stack multiple columns into one | df.stack(dropna=False)                  |
 
 <br>
 
-### Pandas accessors
-
-| Description                                 | Syntax                 |
+| Pandas Vectorized Accessors                 | Syntax                 |
 | ------------------------------------------- | ---------------------- |
 | Multi-dimensional numpy array               | df.values              |
 | Access datetime values in series            | s.dt \| s.dt.year      |
@@ -274,49 +554,61 @@ capitalize, count, startswith, endswith, find, format, lower, upper, lstrip, rst
 
 <br>
 
-### Pandas aggregation and cleaning
-
-| Description           | Syntax                                                                          |
-| --------------------- | ------------------------------------------------------------------------------- |
-| Grouping              | df.groupby('col')                                                               |
-| Group indexing        | gr['col'\]                                                                      |
-| Select group data     | gr.get_group('value')                                                           |
-| Groups and indexes    | gr.groups                                                                       |
-| Aggregations          | gr.size() \| mean, sum, count, min, max                                         |
-| Multiple aggregations | gr.agg(functions_list)                                                          |
-| Aggregate             | df.pivot_table(values=val_cols, index=gr_cols, aggfunc=functions, margins=True) |
+| Pandas Aggregation Methods | Syntax                                                                                           |
+| -------------------------- | ------------------------------------------------------------------------------------------------ |
+| Grouping                   | df.groupby('col')                                                                                |
+| Group indexing             | gr['col'\]                                                                                       |
+| Select group data          | gr.get_group('value')                                                                            |
+| Groups and indexes         | gr.groups                                                                                        |
+| Aggregations               | gr.size() \| mean, sum, count, min, max                                                          |
+| Multiple aggregations      | gr.agg(functions_list)                                                                           |
+| Aggregate                  | df.pivot_table(index=gr_cols, columns=gr_cols, values=val_cols, aggfunc=functions, margins=True) |
 
 <br>
 
-### Pandas combining
-
-| Description           | Syntax                                                                                                                   |
-| --------------------- | ------------------------------------------------------------------------------------------------------------------------ |
-| Union                 | pd.concat(df_list, axis, ignore_index=True) \| df.append()                                                               |
-| Merge join            | df or pd.merge(left=df1, right=df2, how='inner', on='col', suffixes=('_x', '_y'), left_index = True, right_index = True) |
-| Merge join on indices | df.join()                                                                                                                |
-
-<br>
-
-### Pandas transforming
-
-| Description                                                       | Syntax                                                                   |
-| ----------------------------------------------------------------- | ------------------------------------------------------------------------ |
-| Apply function for each row in Series                             | s.map(func/dict)                                                         |
-| Apply function - Series: for each row, DataFrame: for each column | s.apply(func, args) \| df.apply(func, args) \| df.apply(pd.value_counts) |
-| Apply function to every cell in the DataFrame                     | df.applymap(func)                                                        |
-| Unpivot                                                           | df.melt(id_vars=cols, value_vars=cols) \| pd.melt()                      |
-| Pivot                                                             | df.pivot(columns=cols, values=cols)                                      |
+| Pandas Transforming Data                                          | Syntax                                              |
+| ----------------------------------------------------------------- | --------------------------------------------------- |
+| Apply function for each row in Series                             | s.map(func/dict)                                    |
+| Apply function - Series: for each row, DataFrame: for each column | s.apply(func, args) \| df.apply(func, args, axis=0) |
+| Apply function to every cell in the DataFrame                     | df.applymap(func)                                   |
+| Unpivot                                                           | df.melt(id_vars=cols, value_vars=cols) \| pd.melt() |
+| Pivot                                                             | df.pivot(index=cols, columns=cols, values=cols)     |
+| List-like to a row (Pandas 0.25)                                  | df.explot(column, ignore_index=True)                |
 
 <br>
 
-### Pandas casting
+**Pandas Combining DataFrames**
 
-* pd.to_numeric(series, errors="coerce")
+* Union  
+  * pd.concat(df_list, axis, ignore_index=True)  
+  * df.append() # shortcut
+
+* Join
+  * pd.merge(  
+    left=df1, right=df2,
+    how='inner', on='col',  
+    on_left='col1', on_right='col2',  
+    left_index = True, right_index = True,  
+    suffixes=('_x', '_y')  
+    )
+  * df.merge() # shortcut
+  * df.join() # using indexes
+
+<br><hr><br>
+
+## Data Visualization
+
+* [Find The Graphic You Need](https://www.data-to-viz.com/)
+* [The Data Visualisation Catalogue](https://datavizcatalogue.com/index.html)
+* [Plot With Pandas](https://realpython.com/pandas-plot-python/)
+* [Charjunk, Data-ink ratio: effective data visualization](https://www.darkhorseanalytics.com/blog/data-looks-better-naked)
+* [Tableau Color Blind 10](http://tableaufriction.blogspot.com/2012/11/finally-you-can-use-tableau-data-colors.html)
+* [Kernel density estimation (KDE)](https://en.wikipedia.org/wiki/Kernel_density_estimation): better histogram
+* [Small multiple](https://en.wikipedia.org/wiki/Small_multiple): series of similar graphs or charts using the same scale and axes
 
 <br>
 
-### Pandas plots
+### Pandas
 
 * df.plot(x='col', y='col', kind='scatter', c='color', label='', title='', figsize=(,), ax=ax1, xlim=(,), ylim=(,), rot=30)
 * df.plot.bar(x=, y=, color=)
@@ -324,11 +616,27 @@ capitalize, count, startswith, endswith, find, format, lower, upper, lstrip, rst
 * df.box(x='col', y='col')
 * scatter_matrix(cols, figsize(,)) \| from pandas.plotting import scatter_matrix
 
-<br><hr><br>
+<br>
 
-## Matplotlib
+### Seaborn
 
-| Description        | Syntax                                                                              |
+| Seaborn Basics      | Syntax                                                                      |
+| ------------------- | --------------------------------------------------------------------------- |
+| Import module       | import seaborn as sns                                                       |
+| Set style           | sns.set_style('darkgrid' \| 'whitegrid' \| 'dark' \| 'white' \| 'ticks')    |
+| Remove spines       | sns.despine(left=True, bottom=True)                                         |
+| Add legend          | sns.add_legend()                                                            |
+| Histogram \w KDE    | sns.distplot(y_values)                                                      |
+| Kernel Density Plot | sns.kdeplot(y_values, shade=True)                                           |
+| Small multiple      | g = sns.FacetGrid(df, col='col1', row='col2', hue='col3', size=height)      |
+| Fill small multiple | g.map(sns.kdeplot, 'y_col', shade=True)                                     |
+| Heatmap             | sns.heatmap(data, cmap='Blues', cbar=False, annot=False, yticklabels=False) |
+
+<br>
+
+### Matplotlib
+
+| Matplotlib Basics  | Syntax                                                                              |
 | ------------------ | ----------------------------------------------------------------------------------- |
 | Import module      | import matplotlib.pyplot as plt                                                     |
 | Jupyter inline     | %matplotlib inline                                                                  |
@@ -344,9 +652,7 @@ capitalize, count, startswith, endswith, find, format, lower, upper, lstrip, rst
 
 <br>
 
-### Matplotlib figures
-
-| Description                 | Syntax                                                        |
+| Matplotlib Figures          | Syntax                                                        |
 | --------------------------- | ------------------------------------------------------------- |
 | Create figure               | fig = plt.figure(figsize=(width_dpi, height_dpi))             |
 | Add plot to the figure      | ax = fig.add_subplot(nrows, ncols, plot_number)               |
@@ -359,9 +665,7 @@ capitalize, count, startswith, endswith, find, format, lower, upper, lstrip, rst
 
 <br>
 
-### Matplotlib charts
-
-| Description         | Syntax                                                         |
+| Matplotlib Charts   | Syntax                                                         |
 | ------------------- | -------------------------------------------------------------- |
 | Line chart          | plt.plot(x_values, y_values, c='color', label='', linewidth=3) |
 | Bar plot            | plt.bar(bar_positions, bar_heights, [bar_width\])              |
@@ -369,231 +673,6 @@ capitalize, count, startswith, endswith, find, format, lower, upper, lstrip, rst
 | Scatter plot        | plt.scatter(x, y)                                              |
 | Histogram           | plt.hist(y_values, bins=int, range=(min, max))                 |
 | Box plot            | plt.boxplot(values)                                            |
-
-* Boxplot quartile index: (n+1) * 0.25; (n+1) * 0.75
-* Outliers boundaries: Q1 - 1.5 * IQR; Q3 + 1.5 * IQR
-
-<br><hr><br>
-
-## Seaborn
-
-| Description         | Syntax                                                                   |
-| ------------------- | ------------------------------------------------------------------------ |
-| Import module       | import seaborn as sns                                                    |
-| Set style           | sns.set_style('darkgrid' \| 'whitegrid' \| 'dark' \| 'white' \| 'ticks') |
-| Remove spines       | sns.despine(left=True, bottom=True)                                      |
-| Add legend          | sns.add_legend()                                                         |
-| Histogram \w KDE    | sns.distplot(y_values)                                                   |
-| Kernel Density Plot | sns.kdeplot(y_values, shade=True)                                        |
-| Small multiple      | g = sns.FacetGrid(df, col='col1', row='col2', hue='col3', size=height)   |
-| Fill small multiple | g.map(sns.kdeplot, 'y_col', shade=True)                                  |
-| Heatmap             | sns.heatmap(data, cbar=False, yticklabels=False)                         |
-
-<br><hr><br>
-
-## List Comprehensions and Lambda Functions
-
-| Description           | Syntax                                                                                           |
-| --------------------- | ------------------------------------------------------------------------------------------------ |
-| Import module         | import json                                                                                      |
-| Json string to Object | json.loads('json')                                                                               |
-| Json file to Object   | json.load(open('path'))                                                                          |
-| Object to Json string | json.dumps(obj, sort_keys=True, indent=4)                                                        |
-| Dictionary keys       | obj.keys()                                                                                       |
-| Delete key            | del obj[key\]                                                                                    |
-| List comprehension    | [i * 10 for i in [0,1,2,3,4,5\] if i > 0\]                                                       |
-| Functions on Objects  | min\|max\|sorted(obj, key=function, reverse=True) \| one argument function extracts scalar value |
-| Lambda function       | f = lambda x, y: x * y                                                                           |
-| Ternary operator      | return <val\> if <expression\> else None                                                         |
-
-<br><hr><br>
-
-## Regex [regexr.com](https://regexr.com/)
-
-| Description                  | Syntax                                                                  |
-| ---------------------------- | ----------------------------------------------------------------------- |
-| Python module                | import re \| re.search(pattern, string) \| re.findall(patttern, string) |
-| Regex pattern check          | s.str.contains(r'', na=False, flags=re.IGNORECASE) \| IGNORECASE = I    |
-| Regex pattern extract        | s.str.extract(r'', expand=True, flags) \| expand returns df             |
-| Regex pattern replace        | s.str.replace(r'', replace, flags)                                      |
-| Regex all patterns extract   | s.str.extractall(r'')                                                   |
-| Raw expression (prevents \\) | r''                                                                     |
-| Escape                       | \                                                                       |
-
-<br>
-
-| Character classes |                              |
-| ----------------- | ---------------------------- |
-| .                 | any character except newline |
-| \w \d \s          | word, digit, whitespace      |
-| \W \D \S          | not word, digit, whitespace  |
-| [abc\]            | any of a, b, or c            |
-| [^abc\]           | not a, b, or c               |
-| [a-g\]            | character between a & g      |
-
-<br>
-
-| Anchors |                           |
-| ------- | ------------------------- |
-| ^abc$   | start / end of the string |
-| \b \B   | word, not-word boundary   |
-
-<br>
-
-| Escaped characters |                                |
-| ------------------ | ------------------------------ |
-| \. \* \\\          | escaped special characters     |
-| \\t \\n \\r        | tab, linefeed, carriage return |
-
-<br>
-
-| Groups & Lookaround |                                             |
-| ------------------- | ------------------------------------------- |
-| (abc)               | capture group                               |
-| (?P<name\>abc)      | named capture group                         |
-| \1                  | backreference to group #1                   |
-| (?:abc)             | non-capturing group                         |
-| (?=abc)             | positive lookahead (is followed by abc)     |
-| (?!abc)             | negative lookahead (is not followed by abc) |
-| (?<=abc)            | positive lookahead (is preceded by abc)     |
-| (?<!abc)            | negative lookahead (is not preceded by abc) |
-
-<br>
-
-| Quantifiers & Alternation |                              |
-| ------------------------- | ---------------------------- |
-| a* a+ a?                  | 0 or more, 1 or more, 0 or 1 |
-| a{5} a{2,}                | exactly five, two or more    |
-| a{1,3}                    | between one & three          |
-| a+? a{2,}?                | match as few as possible     |
-| ab\|cd                    | match ab or cd               |
-
-<br><hr><br>
-
-## Stuff
-
-### Cool Data Science terms
-
-* Correlation: attributes relations [-1, 1\]
-* Charjunk, Data-ink ratio: [effective data visualization](https://www.darkhorseanalytics.com/blog/data-looks-better-naked)
-* The Tableau Data Color RGB Values: [Color Blind 10](http://tableaufriction.blogspot.com/2012/11/finally-you-can-use-tableau-data-colors.html)
-* Kernel density estimation (KDE): better histogram
-* Small multiple: series of similar graphs or charts using the same scale and axes
-* Tidy data: each variable is a column, each observation is a row, and each type of observational unit is a table
-* Imputation: The technical name for filling in a missing value with a replacement value
-
-<br>
-
-### Datasets
-
-* [Data.gov](https://www.data.gov/) - A directory of government data downloads
-* [/r/datasets](https://reddit.com/r/datasets) - A subreddit that has hundreds of interesting data sets
-* [Awesome datasets](https://github.com/caesar0301/awesome-public-datasets) - A list of data sets hosted on GitHub
-* [rs.io](http://rs.io/100-interesting-data-sets-for-statistics/) - A great blog post with hundreds of interesting data sets
-
-<br>
-
-### Personal links
-
-[data-to-viz.com: leads you to the most appropriate graph for your data](https://www.data-to-viz.com/)  
-[Fourier Transforms With scipy.fft: Python Signal Processing – Real Python](https://realpython.com/python-scipy-fft/)  
-[Plot With Pandas: Python Data Visualization for Beginners – Real Python](https://realpython.com/pandas-plot-python/)  
-[Async IO in Python: A Complete Walkthrough – Real Python](https://realpython.com/async-io-python/)  
-[List Comrehensions (Представление списков RU)](https://webdevblog.ru/kogda-ispolzovat-list-comprehension-v-python/)  
-
-<br><hr><br>
-
-## Command Line (bash)
-
-### Command Line Basics
-
-| Description               | Syntax              | Arguments                                             |
-| ------------------------- | ------------------- | ----------------------------------------------------- |
-| Current time and date     | date                |                                                       |
-| Calendar                  | cal                 |                                                       |
-| Diff side to side         | diff -y file1 file2 | -q report only if differ, -y side by side             |
-| Execute from history      | history, !num, !!   |                                                       |
-| Clear screen              | clear               |                                                       |
-| Close terminal            | exit                |                                                       |
-| Print working directory   | pwd                 |                                                       |
-| List the contents         | ls \| la \| ll      | -A all, -h size -l list, -p add / to dir              |
-| Change directory          | cd                  | ~, .., -                                              |
-| Make directory            | mkdir               |                                                       |
-| Remove empty directory    | rmdir               |                                                       |
-| Copy                      | cp                  | -i interactive, -r recursive                          |
-| Remove                    | rm                  | -i interactive, -r recursive                          |
-| Move                      | mv                  | -i interactive                                        |
-| Find                      | find                | [location\] -name ['filename'\] -iname ['icasename'\] |
-| Username                  | whoami              |                                                       |
-| User info                 | id                  | -un                                                   |
-| Groups                    | groups              |                                                       |
-| Change mode (permissions) | chmod               | [ugoa\][+-=\][rwx\] files \| 777                      |
-| Show file permissions     | stat                |                                                       |
-| Run as superuser          | sudo                | -u username                                           |
-| Change owner              | chown               | [new_owner\][:new_group\] file...                     |
-
-<br>
-
-### Command Line Text Processing
-
-| Description                      | Syntax       | Arguments                                                                  |
-| -------------------------------- | ------------ | -------------------------------------------------------------------------- |
-| Python                           | python       | -c "print(42)"                                                             |
-| Command type                     | type         | -p path, -t type                                                           |
-| List aliases                     | compgen      | -a                                                                         |
-| Create alias                     | alias d=date |                                                                            |
-| Delete alias                     | unalias d    |                                                                            |
-| Locatae a command                | which        |                                                                            |
-| Manual                           | man          |                                                                            |
-| First manual line                | whatis       |                                                                            |
-| Manual built-in                  | help         |                                                                            |
-| Text page reader                 | less         | -S truncate                                                                |
-| Print head of files              | head         | -n lines                                                                   |
-| Print tail of files              | tail         | -n lines                                                                   |
-| Word count (lines, words, bytes) | wc           | -с bytes, -m chars, -l lines, -w words                                     |
-| Print as table                   | column       | -s separator, -t table                                                     |
-| Shuffle lines                    | shuf         | -n head                                                                    |
-| Determine file type              | file         |                                                                            |
-| Concatenate and print files      | cat \| tac   |                                                                            |
-| Sort and print files             | sort         | -r reverse, -u unique, -t separator, -k range, -g numeric                  |
-| Print columns of files           | cut          | -d separator, -f range                                                     |
-| Regex finder                     | grep         | -E extended, -h no-filename, -n show-line, -i ignore-case, -v non-matching |
-| Print to screen                  | echo         |                                                                            |
-| Print formatted to screen        | printf       |                                                                            |
-| Create a file                    | touch        |                                                                            |
-| Translate (replace symbols)      | tr           |                                                                            |
-
-<br>
-
-### Command Line Flows
-
-| Description                         | Syntax      |
-| ----------------------------------- | ----------- |
-| Redirect stdout (overwrite, append) | >, >>       |
-| Redirect stderr (overwrite, append) | 2>, 2>>     |
-| Redirect out and err                | > file 2>&1 |
-| Redirect stdin                      | <           |
-| Pipe left output to right input     | \|          |
-| Drop output                         | > /dev/null |
-| Current process descriptors         | /proc/$$/fd |
-
-<br>
-
-### Glob Patterns and Wildcards
-\*, ?, [a-z\], [ranges and expressions](https://www.gnu.org/software/grep/manual/html_node/Character-Classes-and-Bracket-Expressions.html)
-
-<br>
-
-### Personal hotkeys
-
-| Description       | PowerShell | bash                          |
-| ----------------- | ---------- | ----------------------------- |
-| Interrupt         | CTRL + C   | CTRL + C                      |
-| EOF               | CTRL + D   | CTRL + D                      |
-| Clear             | CTRL + L   | CTRL + L                      |
-| Clear input       | ESC        | CTRL + U <br> ESC + Backspace |
-| Commander info    | CTRL + Q   | CTRL + X, I                   |
-| Commander extract | SHIFT + F2 |                               |
 
 <br><hr><br>
 
@@ -604,54 +683,245 @@ capitalize, count, startswith, endswith, find, format, lower, upper, lstrip, rst
   * Data Control Language (DCL): `GRANT`, `REVOKE`
   * Data Manipulation Language (DML): `SELECT`, `INSERT`, `UPDATE`, `DELETE`
 
+<br>
+
 * [sqlstyle.guide](https://www.sqlstyle.guide/)
-* [Fast distributed SQL query engine for big data analytics: https://trino.io/](https://trino.io/)
-
-``` sql
-select <cols, *>
-from t1
-where <condition>
-group by <cols>
-having <condition>
-order by <cols, numbers> [desc]
-limit 10;
-```
-
-| Description                   | Syntax                                                                                 |
-| ----------------------------- | -------------------------------------------------------------------------------------- |
-| Execution order               | `from` -> `where` -> `group by` -> `having` -> `select` -> `order by` -> `limit`       |
-| String concatenation (SQLite) | \|\|                                                                                   |
-| Aggregation functions         | count, sum, avg, min, max, len                                                         |
-| Rounding results              | round(<column, value\>, <n\>)                                                          |
-| Casting types                 | cast(<column, value\> as <type\>)                                                      |
-| Case conversion               | lower(), upper()                                                                       |
-| Conditional logic             | `case when` <expression\> `then` <value1\> [...\] [`else` <value2\>\] `end as` <name\> |
-| IN Operator                   | <column, value\> in (<values\>)                                                        |
-| Joining data                  | <inner, left, right, full (outer), cross\> join on <condition\>                        |
-| Combining rows                | union [all\], intersect, except                                                        |
-| Null operations               | is [not\] null                                                                         |
-| Like pattern                  | like '[pattern\] [%\]'                                                                 |
-| Named subquery                | with <name\> as <query\> [...\]                                                        |
-| Creating views                | create view <name\> as <query\>                                                        |
+* [trino.io](https://trino.io/): Fast distributed SQL query engine for big data analytics
 
 <br>
 
-### [SQL Server date formats](http://www.sql-server-helper.com/tips/date-formats.aspx)
+### DML Operations
+
+<br>
+
 ``` sql
-select convert(varchar(8), getdate(), 112) AS [DateKey]
-select cast([YYYMMDD] as datetime) as [DateTime]
+select <column_name, ...,  *>
+from <table_name>
+where <condition>
+group by <column_name, ...>
+having <condition>
+order by <column_name | column_number, ...> [desc]
+limit 10;
+
+insert into <table_name> [(
+	<column_name>, ...
+)] values (
+	<value_1>, ...
+), ...;
+
+update <table_name>
+set <column_name> = <new_value>, ...
+where <condition>;
+
+delete from <table_name> where <condition>;
 ```
+
+<br>
+
+| Description                   | Syntax                                                                         |
+| ----------------------------- | ------------------------------------------------------------------------------ |
+| Execution order               | from -> where -> group by -> having -> select -> order by -> limit             |
+| String concatenation (SQLite) | \|\|                                                                           |
+| Unique                        | distinct                                                                       |
+| Aggregation functions         | count, sum, avg, min, max, len                                                 |
+| Rounding results              | round(<column, value\>, <n\>)                                                  |
+| Casting types                 | cast(<column, value\> as <type\>)                                              |
+| Case conversion               | lower(), upper()                                                               |
+| Conditional logic             | case when <expression\> then <value1\> [...\] [else <value2\>\] end as <name\> |
+| IN Operator                   | <column, value\> in (<values\>)                                                |
+| Joining data                  | <inner, left, right, full (outer), cross\> join on <condition\>                |
+| Combining rows                | union [all\], intersect, except                                                |
+| Null operations               | is [not\] null                                                                 |
+| Like pattern                  | like '[pattern\] [%\]'                                                         |
+| Named subquery                | with <name\> as <query\> [...\]                                                |
+
+<br>
+
+### DDL Operations
+
+<br>
+
+``` sql
+create table <table_name> (
+	<column_name> <column_type> [primary key]
+	,primary key (<column_name>, ...)
+	,foreign key (<column_name>) references <table_name>(<column_name>)
+);
+
+alter table <table_name>
+	add column <column_name> <column_type>;
+```
+
+<br>
+
+| Description         | Syntax                                  |
+| ------------------- | --------------------------------------- |
+| SQLite column types | text, integer, real, numeric, blob      |
+| Creating a view     | create view <name\> as <query\>         |
+| Removing an object  | drop <view, table\> [if exists] <name\> |
+
+<br>
+
+### Normalization
+
+* [A Simple Guide to Five Normal Forms in Relational Database Theory](http://www.bkent.net/Doc/simple5.htm)
+* [Database Normalization on Wikipedia](https://en.wikipedia.org/wiki/Database_normalization)
+
+1. First normal form: the values in each column of a table must be atomic
+2. Second normal form: every non candidate-key attribute must depend on the whole candidate key, not just part of it
+3. Third normal form: eliminating the transitive functional dependencies
+
+<br>
+
+### SQL with Python
+
+<br>
+
+``` python
+#!conda install -yc conda-forge ipython-sql
+
+%%capture
+%load_ext sql
+%sql sqlite:///sqlite_file.db
+
+%%sql
+<query>
+```
+
+<br>
+
+| Description             | Syntax                             |
+| ----------------------- | ---------------------------------- |
+| Import module           | import sqlite3                     |
+| Connect to database     | conn = connect(path)               |
+| Close the connection    | conn.close()                       |
+| Create a cusror         | cursor = conn.cursor()             |
+| Run the query           | cursor.execute(sql_query)          |
+| Return one row          | cursor.fetchone()                  |
+| Return n rows           | cursor.fetchmany(n)                |
+| Return the full results | cursor.fetchall()                  |
+| No cursor shortcut      | conn.execute(sql_query).fetchall() |
 
 <br>
 
 ### SQLite Shell
 
-| Description           | Syntax               |
-| --------------------- | -------------------- |
-| Open database         | sqlite3 <dbname.db\> |
-| Enable column headers | .headers on          |
-| Enable column output  | .mode column         |
-| Help                  | .help                |
-| Tables list           | .tables              |
-| Run in shell          | .shell <command\>    |
-| Quit                  | .quit                |
+| Description                 | Syntax                |
+| --------------------------- | --------------------- |
+| Open database               | sqlite3 <dbname.db\>  |
+| Enable column headers       | .headers on           |
+| Enable column output        | .mode column          |
+| Help                        | .help                 |
+| Tables list                 | .tables               |
+| Run in shell                | .shell <command\>     |
+| Quit                        | .quit                 |
+| View the schema for a table | .schema <table_name\> |
+
+<br>
+
+### SQL Server Snippets
+
+<br>
+
+``` sql
+select convert(varchar(8), getdate(), 112) as [DateKey]
+select cast([YYYMMDD] as datetime) as [DateTime]
+```
+
+<br><hr><br>
+
+## Business
+
+### Communication
+
+* **Fuzzy language** is vague language and it is common in the workspace
+* **Sought clarification**: What is the reason behind the request? What is the right question to ask?
+* [**Proxies**](https://en.wikipedia.org/wiki/Proxy_(statistics)): is a variable that stands in place of another variable (which is typically hard to get)
+* [**Price dumping**](https://en.wikipedia.org/wiki/Dumping_(pricing_policy)): occurs when manufacturers export a product to another country at a price below the normal price with an injuring effect (could be illegal)
+* **Line organization**: most requests come directly from your manager
+* **Functional organization**: requests can come from all over the company
+* **Majority rule**: a decision rule that selects alternatives with more than half the votes
+* **Prototyping** has several advantages like easier estimation, profitability decision, changes and goals flexibility
+* [**Supply Chain Management (SCM)**](https://en.wikipedia.org/wiki/Supply_chain_management): the management of the flow of goods and services
+
+<br>
+
+### Metrics
+
+Measurements that help management track of the overall health of the business.
+
+* Observed across time
+* Calcullted separately at specific points in time
+* Understoon in a chronological context
+
+<br>
+
+A good metric should have the following characteristics:
+* **Accurate**: do not create anything wrongly measured
+* **Simple and intelligible**: easy to read for anyone
+* **Easy to drill down into**: are we doing good or bad and why
+* **Actionable**: ability to change things according to the measure
+* **Dynamic**: metrics need to change over reasonable periods of time
+* **Standardized**: everyone should see the same thing with no inconsistency
+* **Business Oriented**: should be relevant for the business
+
+<br>
+
+Measure examples:
+* **Gross Domestic Product** (GDP)
+* **Inflation**
+* **Unemployment Rate**
+* **Revenue**
+* **Conversion Rate** (CR)
+* [**Average Order Value**](https://www.optimizely.com/optimization-glossary/average-order-value) (AOV): reduce payback period and increase Return on Investment (ROI) in retail
+* [**Net Promoter Score**](https://en.wikipedia.org/wiki/Customer_success) (NPS): quantifies customer satisfaction
+  * % Promoters - % Detractors = (\# Promoters - \# Detractors) / \# Total
+* [**Churn Rate**](https://www.profitwell.com/customer-churn/calculate-churn-rate) is when a customer ceases to be a customer (subscription-based)
+  * \# Churned Customers / \# Total Customers
+  * The more customers you lose, the smaller the pool of potential customers becomes
+  * Current customers are more likely to buy the more expensive products than new customers (subscription based)
+  * Churn rate informs how happy customers are with your product
+  * Happy customers provide free advertising
+  * Rretaining existing customers is more profitable than acquiring new customers
+    * [Applying and Evaluating Models to Predict Customer Attrition Using Data Mining Techniques](https://journals.lib.unb.ca/index.php/JCIM/article/view/442/735)
+
+<br><hr><br>
+
+## Probability, Statistics and Math
+
+* [Introducing KaTeX](https://katex.org/docs/supported.html): The fastest math typesetting library for the web
+* [Correlation](https://en.wikipedia.org/wiki/Correlation_and_dependence): attributes relations [-1, 1\]
+  * [Pearson correlation coefficient](https://en.wikipedia.org/wiki/Pearson_correlation_coefficient)
+
+<br>
+
+### Analysis Criterias and Helpers
+* [Weighted sum model (WSM)](https://en.wikipedia.org/wiki/Weighted_sum_model): is the best known and simplest multi-criteria decision analysis (MCDA)
+  * $A_i^{WSM-score} = \sum_{j=1}^{n} w_j a_{ij} \text {, for i = 1, 2, 3, \dots, m}$
+* [Min-Max Feature scaling (Normalization)](https://en.wikipedia.org/wiki/Feature_scaling): compare different scales in a meaningful way [0, 1\]
+  * $x' = \frac {x-\min(x)} {\max(x) - \min(x)}$
+
+<br>
+
+### Box Plot Hints
+
+* Quartile indexes:
+  * $i_1 = (n+1) * 0.25$
+  * $i_3 = (n+1) * 0.75$
+* Outliers boundaries:
+  * $\min = Q_1 - 1.5* \text{IQR}$
+  * $\max = Q_3 + 1.5 * \text{IQR}$
+
+<br>
+
+### Statistics with Python
+
+| Description             | Syntax    |
+| ----------------------- | --------- |
+| Correlaiton coefficient | df.corr() |
+
+<br><hr><br>
+
+## Machine Learning
+
+<br><hr><br>
