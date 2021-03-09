@@ -17,6 +17,9 @@
     - [Jupyter Shortcuts (Hotkeys)](#jupyter-shortcuts-hotkeys)
     - [Python Basics](#python-basics)
     - [Object-Oriented](#object-oriented)
+    - [asyncio](#asyncio)
+    - [venv](#venv)
+    - [PyQT5](#pyqt5)
     - [NumPy Arrays](#numpy-arrays)
     - [Pandas Transform and Clean](#pandas-transform-and-clean)
   - [Data Visualization](#data-visualization)
@@ -33,25 +36,27 @@
   - [Business](#business)
     - [Communication](#communication)
     - [Metrics](#metrics)
-  - [Probability, Statistics and Math](#probability-statistics-and-math)
-    - [Analysis Criterias and Helpers](#analysis-criterias-and-helpers)
-    - [Box Plot Hints](#box-plot-hints)
-    - [Statistics with Python](#statistics-with-python)
+  - [Probability and Statistics](#probability-and-statistics)
+    - [Sampling](#sampling)
+    - [Variables](#variables)
+    - [Frequency Distributions](#frequency-distributions)
   - [Machine Learning](#machine-learning)
+  - [Computer Vision](#computer-vision)
 
 <br><hr><br>
 
 ## Datasets
-* [Data.gov](https://www.data.gov/) - A directory of government data downloads
-* [/r/datasets](https://reddit.com/r/datasets) - A subreddit that has hundreds of interesting data sets
-* [Awesome datasets](https://github.com/caesar0301/awesome-public-datasets) - A list of data sets hosted on GitHub
-* [rs.io](http://rs.io/100-interesting-data-sets-for-statistics/) - A great blog post with hundreds of interesting data sets
+
+- [Data.gov](https://www.data.gov/) - A directory of government data downloads
+- [/r/datasets](https://reddit.com/r/datasets) - A subreddit that has hundreds of interesting data sets
+- [Awesome datasets](https://github.com/caesar0301/awesome-public-datasets) - A list of data sets hosted on GitHub
+- [rs.io](http://rs.io/100-interesting-data-sets-for-statistics/) - A great blog post with hundreds of interesting data sets
 
 <br>
 
 ## Shell
 
-* [Glob Patterns and Wildcards](https://www.gnu.org/software/grep/manual/html_node/Character-Classes-and-Bracket-Expressions.html): *, ?, [a-z\]
+- [Glob Patterns and Wildcards](https://www.gnu.org/software/grep/manual/html_node/Character-Classes-and-Bracket-Expressions.html): *, ?, [a-z\]
 
 <br>
 
@@ -148,8 +153,8 @@
 
 ## API
 
-* [What is OAuth? Definition and How it Works](https://www.varonis.com/blog/what-is-oauth/)
-* [Scraping Client Side Rendered Data with Python and Selenium](https://sadesmith.com/2018/06/15/blog/scraping-client-side-rendered-data-with-python-and-selenium)
+- [What is OAuth? Definition and How it Works](https://www.varonis.com/blog/what-is-oauth/)
+- [Scraping Client Side Rendered Data with Python and Selenium](https://sadesmith.com/2018/06/15/blog/scraping-client-side-rendered-data-with-python-and-selenium)
 
 <br>
 
@@ -263,16 +268,16 @@
 
 ## DAX and MS BI
 
-* [SQLBI.com](https://www.sqlbi.com/)
-* [DAX Patterns](https://www.daxpatterns.com/patterns/)
-* [Kapacity Churn Risk Report in Power BI](https://powerbi.microsoft.com/en-us/partner-showcase/kapacity-a-s-sales-report-demo/)
-* [Skateboard Report in Power BI](https://powerbi.tips/product/scrims-msft-skateboard-report-free/)
+- [SQLBI.com](https://www.sqlbi.com/)
+- [DAX Patterns](https://www.daxpatterns.com/patterns/)
+- [Kapacity Churn Risk Report in Power BI](https://powerbi.microsoft.com/en-us/partner-showcase/kapacity-a-s-sales-report-demo/)
+- [Skateboard Report in Power BI](https://powerbi.tips/product/scrims-msft-skateboard-report-free/)
 
 <br><hr><br>
 
 ## Python
 
-* [List Comrehensions (Представление списков RU)](https://webdevblog.ru/kogda-ispolzovat-list-comprehension-v-python/)
+- [List Comrehensions (Представление списков RU)](https://webdevblog.ru/kogda-ispolzovat-list-comprehension-v-python/)
 
 <br>
 
@@ -350,7 +355,7 @@
 
 <br>
 
-* String functions: `capitalize`, `count`, `startswith`, `endswith`, `find`, `format`, `lower`, `upper`, `lstrip`, `rstrip`, `strip`, `replace`, `split`, `swapcase`, `title`, `zfill`;
+- String functions: `capitalize`, `count`, `startswith`, `endswith`, `find`, `format`, `lower`, `upper`, `lstrip`, `rstrip`, `strip`, `replace`, `split`, `swapcase`, `title`, `zfill`;
 
 <br>
 
@@ -416,6 +421,7 @@
 
 | List Comprehansions and Lambdas | Syntax                                                                                           |
 | ------------------------------- | ------------------------------------------------------------------------------------------------ |
+| Ranges (integers only)          | range(min, max, interval)                                                                        |
 | List comprehension              | [i * 10 for i in [0,1,2,3,4,5\] if i > 0\]                                                       |
 | Functions on Objects            | min\|max\|sorted(obj, key=function, reverse=True) \| one argument function extracts scalar value |
 | Lambda function                 | f = lambda x, y: x * y                                                                           |
@@ -427,7 +433,7 @@
 
 <br>
 
-``` python
+```python
 class MyClass():
 	def __init__(self, param_1):
 		self.attribute_1 = param_1
@@ -438,6 +444,59 @@ mc = MyClass(10)
 mc.add_20()
 print(mc.attribute_1)
 ```
+
+<br>
+
+### asyncio
+
+- [asyncio for beginners](https://medium.com/@esfoobar/python-asyncio-for-beginners-c181ab226598)
+- [asyncio on Real Python](https://realpython.com/async-io-python)
+- [Task docs](https://docs.python.org/3/library/asyncio-task.html)
+- [Stream docs](https://docs.python.org/3/library/asyncio-stream.html)
+- [Use both Multitasking and Asyncio](https://youtu.be/0kXaLh8Fz3k?t=10m30s)
+
+<br>
+
+| asyncio                          | Syntax                               |
+| -------------------------------- | ------------------------------------ |
+| Import module                    | import asyncio                       |
+| Grab an event loop               | asyncio.run(<coroutine\>)            |
+| Make an async function           | async def func():                    |
+| await coroutine                  | await func()                         |
+| Awaitable sleep                  | asyncio.sleep(n)                     |
+| Start an awaitable task (future) | asyncio.create_task(<coroutine\>)    |
+| Gather multiple coroutines       | asyncio.gather([coroutines\])        |
+| Asynchronous Queue               | asyncio.Queue()                      |
+| Asynchronous Iterable            | async for <iterable\>                |
+| Get Event Loop                   | asyncio.get_event_loop()             |
+| Start Event Loop                 | try: loop.run_until_complete(main()) |
+| Close Event Loop                 | finally: loop.close()                |
+| Currently pending tasks          | asyncio.Task.all_tasks()             |
+
+
+<br>
+
+### venv
+
+| Description  | Syntax                          |
+| ------------ | ------------------------------- |
+| Create       | py -m venv env                  |
+| Activate     | .\env\Scripts\activate          |
+| Deactivate   | deactivate                      |
+| Dependencies | pip install -r requirements.txt |
+
+<br>
+
+### PyQT5
+
+| Description                        | Syntax                       |
+| ---------------------------------- | ---------------------------- |
+| Import modules                     | from PyQt5.QtWidgets import  |
+| Create an instance (one per app)   | app = QApplication(sys.argv) |
+| Start the event loop               | app.exec_()                  |
+| Create window (no parent = window) | window = QWidget()           |
+| Create main window                 | window = QMainWindow()       |
+| Show window (hidden by default)    | window.show()                |
 
 <br>
 
@@ -473,10 +532,16 @@ print(mc.attribute_1)
 
 <br>
 
+| NumPy Utils     | Syntax                        |
+| --------------- | ----------------------------- |
+| Advanced ranges | np.arange(min, max, interval) |
+
+<br>
+
 ### Pandas Transform and Clean
 
-* Tidy data: each variable is a column, each observation is a row, and each type of observational unit is a table
-* Imputation: The technical name for filling in a missing value with a replacement value
+- Tidy data: each variable is a column, each observation is a row, and each type of observational unit is a table
+- Imputation: The technical name for filling in a missing value with a replacement value
 
 <br>
 
@@ -489,8 +554,9 @@ print(mc.attribute_1)
 | Dataframe object info                   | df.info(memory_usage='deep')                                        |
 | Describing a dataframe/series object    | df.describe(include='all') \| s.describe()                          |
 | Returning a dataframe/series data types | df.dtypes \| s.dtype()                                              |
+| Returning or setting column names       | df.columns                                                          |
 | Returning the dimensions of a dataframe | dt.shape                                                            |
-| Create dataframe/series                 | pd.DataFrame({'col': []}) \| pd.Series([])                          |
+| Create dataframe/series                 | pd.DataFrame({'col': []}, columns=cols) \| pd.Series([])            |
 | Series to dataframe/list                | s.to_frame('col')  \| s.tolist()                                    |
 
 <br>
@@ -498,7 +564,7 @@ print(mc.attribute_1)
 | Pandas Select Operations         | Syntax                                   |
 | -------------------------------- | ---------------------------------------- |
 | Selecting the first n rows       | df.head(5)                               |
-| Selecting random n rows          | df.sample(5)                             |
+| Selecting random n rows          | df.sample(5, random_state=1)             |
 | Selecting a single column        | df['col'\]                               |
 | Selecting multiple columns       | df[['col', 'col2'\]\]                    |
 | Shorthand Convention for columns | df['col'\] \| df[['col', 'col2'\]\]      |
@@ -508,19 +574,19 @@ print(mc.attribute_1)
 
 <br>
 
-| Pandas Missing Values Handling             | Syntax                                                     |
-| ------------------------------------------ | ---------------------------------------------------------- |
-| Unique value counts for a dataframe/series | s.unique() \| s.value_counts(dropna=False)                 |
-| Selecting null and non-null values         | s.isnull() \| s.notnull()                                  |
-| Selecting null rows                        | df.isnull().any(axis=1)                                    |
-| Renaming an existing column                | df.rename(columns={'src_name': 'dest_name'}, inplace=True) |
-| Dropping an existing column                | df.drop(labels=['row'\], columns=['col'\], inplace=True)   |
-| Dropping missing values                    | df.dropna(axis=0, thresh=number_of_records, inplace=True)  |
-| Show duplicated rows                       | df.duplicated(cols)                                        |
-| Drop duplicated rows                       | df.drop_duplicates(cols)                                   |
-| Fill missing values                        | df.fillna(value) \| s.fillna(value)                        |
-| Reset index column                         | df.reset_index(drop=True, inplace=True)                    |
-| Renaming an index                          | df.rename_axis(None, axis=0)                               |
+| Pandas Missing Values Handling             | Syntax                                                             |
+| ------------------------------------------ | ------------------------------------------------------------------ |
+| Unique value counts for a dataframe/series | s.unique() \| s.value_counts(dropna=False, bins=3, normalize=True) |
+| Selecting null and non-null values         | s.isnull() \| s.notnull()                                          |
+| Selecting null rows                        | df.isnull().any(axis=1)                                            |
+| Renaming an existing column                | df.rename(columns={'src_name': 'dest_name'}, inplace=True)         |
+| Dropping an existing column                | df.drop(labels=['row'\], columns=['col'\], inplace=True)           |
+| Dropping missing values                    | df.dropna(axis=0, thresh=number_of_records, inplace=True)          |
+| Show duplicated rows                       | df.duplicated(cols)                                                |
+| Drop duplicated rows                       | df.drop_duplicates(cols)                                           |
+| Fill missing values                        | df.fillna(value) \| s.fillna(value)                                |
+| Reset index column                         | df.reset_index(drop=True, inplace=True)                            |
+| Renaming an index                          | df.rename_axis(None, axis=0)                                       |
 
 <br>
 
@@ -577,91 +643,93 @@ print(mc.attribute_1)
 
 <br>
 
-**Pandas Combining DataFrames**
+-*Pandas Combining DataFrames**
 
-* Union  
-  * pd.concat(df_list, axis, ignore_index=True)  
-  * df.append() # shortcut
+- Union  
+  - pd.concat(df_list, axis, ignore_index=True)  
+  - df.append() # shortcut
 
-* Join
-  * pd.merge(  
+- Join
+  - pd.merge(  
     left=df1, right=df2,
     how='inner', on='col',  
     on_left='col1', on_right='col2',  
     left_index = True, right_index = True,  
     suffixes=('_x', '_y')  
     )
-  * df.merge() # shortcut
-  * df.join() # using indexes
+  - df.merge() # shortcut
+  - df.join() # using indexes
 
 <br><hr><br>
 
 ## Data Visualization
 
-* [Find The Graphic You Need](https://www.data-to-viz.com/)
-* [The Data Visualisation Catalogue](https://datavizcatalogue.com/index.html)
-* [Plot With Pandas](https://realpython.com/pandas-plot-python/)
-* [Charjunk, Data-ink ratio: effective data visualization](https://www.darkhorseanalytics.com/blog/data-looks-better-naked)
-* [Tableau Color Blind 10](http://tableaufriction.blogspot.com/2012/11/finally-you-can-use-tableau-data-colors.html)
-* [Kernel density estimation (KDE)](https://en.wikipedia.org/wiki/Kernel_density_estimation): better histogram
-* [Small multiple](https://en.wikipedia.org/wiki/Small_multiple): series of similar graphs or charts using the same scale and axes
+- [Find The Graphic You Need](https://www.data-to-viz.com/)
+- [The Data Visualisation Catalogue](https://datavizcatalogue.com/index.html)
+- [Plot With Pandas](https://realpython.com/pandas-plot-python/)
+- [Charjunk, Data-ink ratio: effective data visualization](https://www.darkhorseanalytics.com/blog/data-looks-better-naked)
+- [Tableau Color Blind 10](http://tableaufriction.blogspot.com/2012/11/finally-you-can-use-tableau-data-colors.html)
+- [Kernel density estimation (KDE)](https://en.wikipedia.org/wiki/Kernel_density_estimation): better histogram
+- [Small multiple](https://en.wikipedia.org/wiki/Small_multiple): series of similar graphs or charts using the same scale and axes
+- [Matplotlib styles](https://matplotlib.org/stable/gallery/style_sheets/style_sheets_reference.html)
 
 <br>
 
 ### Pandas
 
-* df.plot(x='col', y='col', kind='scatter', c='color', label='', title='', figsize=(,), ax=ax1, xlim=(,), ylim=(,), rot=30)
-* df.plot.bar(x=, y=, color=)
-* df.hist(bins=, range=(,))
-* df.box(x='col', y='col')
-* scatter_matrix(cols, figsize(,)) \| from pandas.plotting import scatter_matrix
+- df.plot(x='col', y='col', kind='scatter')
+  - c='color', color='color'
+  - figsize=(,), ax=ax1, grid=True
+  - label='', legend=True, title=''
+  - xlim=(,), xticks=[]
+  - rot=30, alpha=1
+  - autopct='%.1f%%' # -% String Formatting -.1 precision -f fixed point -% perc -% symbol
+  - secondary_y=False, marker='o'
+- df.plot.bar(x='col', y='col')
+- df.plot.kde()
+- df.hist(bins=, range=(,), histtype='step')
+- df.box(x='col', y='col')
+- df.<graph\>()
+
+<br>
+
+- from pandas.plotting import scatter_matrix
+- scatter_matrix(cols, figsize(,))
 
 <br>
 
 ### Seaborn
 
-| Seaborn Basics      | Syntax                                                                      |
-| ------------------- | --------------------------------------------------------------------------- |
-| Import module       | import seaborn as sns                                                       |
-| Set style           | sns.set_style('darkgrid' \| 'whitegrid' \| 'dark' \| 'white' \| 'ticks')    |
-| Remove spines       | sns.despine(left=True, bottom=True)                                         |
-| Add legend          | sns.add_legend()                                                            |
-| Histogram \w KDE    | sns.distplot(y_values)                                                      |
-| Kernel Density Plot | sns.kdeplot(y_values, shade=True)                                           |
-| Small multiple      | g = sns.FacetGrid(df, col='col1', row='col2', hue='col3', size=height)      |
-| Fill small multiple | g.map(sns.kdeplot, 'y_col', shade=True)                                     |
-| Heatmap             | sns.heatmap(data, cmap='Blues', cbar=False, annot=False, yticklabels=False) |
+| Seaborn Basics              | Syntax                                                                           |
+| --------------------------- | -------------------------------------------------------------------------------- |
+| Import module               | import seaborn as sns                                                            |
+| Set background style        | sns.set_style('darkgrid' \| 'whitegrid' \| 'dark' \| 'white' \| 'ticks')         |
+| Remove spines               | sns.despine(left=True, bottom=True)                                              |
+| Histogram \w KDE            | sns.distplot(y_values)                                                           |
+| Kernel Density Plot         | sns.kdeplot(y_values, shade=True)                                                |
+| Countplot (Clustered Bar)   | sns.countplot(x='x_col', hue='y_col', data=df, order=[], hue_order=[])           |
+| Strip Plot (Narrow Scatter) | sns.stripplot(x='x_col', y='y_col', data=df, jitter=True)                        |
+| Box Plot (And Whisker)      | sns.boxplot(x='x_col', y='y_col', data=df, whis=4, orient='vertical', width=.15) |
+| Heatmap                     | sns.heatmap(data, cmap='Blues', cbar=False, annot=False, yticklabels=False)      |
+| Small Multiple              | g = sns.FacetGrid(df, col='col1', row='col2', hue='col3', size=height)           |
+| Fill Small Multiple         | g.map(sns.kdeplot, 'y_col', shade=True)                                          |
 
 <br>
 
 ### Matplotlib
 
-| Matplotlib Basics  | Syntax                                                                              |
-| ------------------ | ----------------------------------------------------------------------------------- |
-| Import module      | import matplotlib.pyplot as plt                                                     |
-| Jupyter inline     | %matplotlib inline                                                                  |
-| Show plot          | plt.show()                                                                          |
-| Save plot          | plt.savefig('file') \| fig.savefig('file')                                          |
-| Rotate axis ticks  | plt.xticks(rotation=90)                                                             |
-| Disable axis ticks | ax.tick_params(bottom='off', top='off', left='off', right='off', labelbottom='off') |
-| Disable spines     | ax.spines['side'\].set_visible(False) \| right, bottom, top, left                   |
-| Add axis labels    | plt.xlabel('') \| plt.ylabel('')                                                    |
-| Add plot label     | plt.title('')                                                                       |
-| Add legend labels  | plt.legend(loc='upper left')                                                        |
-| Add axis text      | ax.text(x, y, text)                                                                 |
-
-<br>
-
-| Matplotlib Figures          | Syntax                                                        |
-| --------------------------- | ------------------------------------------------------------- |
-| Create figure               | fig = plt.figure(figsize=(width_dpi, height_dpi))             |
-| Add plot to the figure      | ax = fig.add_subplot(nrows, ncols, plot_number)               |
-| Create figure and subplots  | fig, ax = plt.subplots(nrows, ncols, figsize=(width, height)) |
-| Set subplot title           | ax.set_title('')                                              |
-| Set subplot tick positions  | ax.set_xticks(label_positions)                                |
-| Set subplot tick labels     | ax.set_xticklabels(labels, rotation=90)                       |
-| Set subplot ranges          | ax.set_xlim(min, max)                                         |
-| Set subplot horizontal line | ax.axhline(y, c='color', alpha=1)                             |
+| Matplotlib Basics          | Syntax                                                            |
+| -------------------------- | ----------------------------------------------------------------- |
+| Import module              | import matplotlib.pyplot as plt                                   |
+| Jupyter inline             | %matplotlib inline                                                |
+| Set plot style             | plt.style.use('fivethirtyeight')                                  |
+| Plot style list            | plt.style.available                                               |
+| Show plot                  | plt.show()                                                        |
+| Save plot                  | plt.savefig('file') \| fig.savefig('file')                        |
+| Create figure              | fig = plt.figure(figsize=(width_dpi, height_dpi))                 |
+| Add plot to the figure     | ax = fig.add_subplot(nrows, ncols, plot_number)                   |
+| Create figure and subplots | fig, axes = plt.subplots(nrows, ncols, figsize=(width, height))   |
+| Disable spines             | ax.spines['side'\].set_visible(False) \| right, bottom, top, left |
 
 <br>
 
@@ -674,19 +742,32 @@ print(mc.attribute_1)
 | Histogram           | plt.hist(y_values, bins=int, range=(min, max))                 |
 | Box plot            | plt.boxplot(values)                                            |
 
+<br>
+
+| Matplotlib Plot and Axis | plt         | ax                             | Arguments                                                                         |
+| ------------------------ | ----------- | ------------------------------ | --------------------------------------------------------------------------------- |
+| Set Title                | title       | set_title                      | 'text'                                                                            |
+| Add Legend               | legend      | legend                         | 'text', loc='upper left', fontsize=12                                             |
+| Set Axis Labels          | xlabel      | set_xlabel                     | 'text', size=12                                                                   |
+| Ticks and Their Labels   | xticks      | set_xticks, ax.set_xticklabels | [ticks\], [labels\], rotation=90, size=12                                         |
+| Batch Tick Parameters    | tick_params | tick_params                    | bottom='off', top='off', left='off', right='off', labelbottom='off', labelsize=12 |
+| Set Axis Limit Range     | xlim        | set_xlim                       | min, max                                                                          |
+| Add H/V Lines            | axhline     | axhline                        | y, label='', c='color', alpha=1                                                   |
+| Add Text                 | text        | text                           | x, y, 'text'                                                                      |
+
 <br><hr><br>
 
 ## SQL
 
-* Data Query Language (DQL)
-  * Data Definition Language (DDL): `CREATE`, `ALTER`, and `DROP`
-  * Data Control Language (DCL): `GRANT`, `REVOKE`
-  * Data Manipulation Language (DML): `SELECT`, `INSERT`, `UPDATE`, `DELETE`
+- Data Query Language (DQL)
+  - Data Definition Language (DDL): `CREATE`, `ALTER`, and `DROP`
+  - Data Control Language (DCL): `GRANT`, `REVOKE`
+  - Data Manipulation Language (DML): `SELECT`, `INSERT`, `UPDATE`, `DELETE`
 
 <br>
 
-* [sqlstyle.guide](https://www.sqlstyle.guide/)
-* [trino.io](https://trino.io/): Fast distributed SQL query engine for big data analytics
+- [sqlstyle.guide](https://www.sqlstyle.guide/)
+- [trino.io](https://trino.io/): Fast distributed SQL query engine for big data analytics
 
 <br>
 
@@ -694,7 +775,7 @@ print(mc.attribute_1)
 
 <br>
 
-``` sql
+```sql
 select <column_name, ...,  *>
 from <table_name>
 where <condition>
@@ -741,7 +822,7 @@ delete from <table_name> where <condition>;
 
 <br>
 
-``` sql
+```sql
 create table <table_name> (
 	<column_name> <column_type> [primary key]
 	,primary key (<column_name>, ...)
@@ -764,8 +845,8 @@ alter table <table_name>
 
 ### Normalization
 
-* [A Simple Guide to Five Normal Forms in Relational Database Theory](http://www.bkent.net/Doc/simple5.htm)
-* [Database Normalization on Wikipedia](https://en.wikipedia.org/wiki/Database_normalization)
+- [A Simple Guide to Five Normal Forms in Relational Database Theory](http://www.bkent.net/Doc/simple5.htm)
+- [Database Normalization on Wikipedia](https://en.wikipedia.org/wiki/Database_normalization)
 
 1. First normal form: the values in each column of a table must be atomic
 2. Second normal form: every non candidate-key attribute must depend on the whole candidate key, not just part of it
@@ -777,7 +858,7 @@ alter table <table_name>
 
 <br>
 
-``` python
+```python
 #!conda install -yc conda-forge ipython-sql
 
 %%capture
@@ -821,9 +902,9 @@ alter table <table_name>
 
 ### SQL Server Snippets
 
-<br>
+- [Date and Time Conversions Using SQL Server](https://www.mssqltips.com/sqlservertip/1145/date-and-time-conversions-using-sql-server/)
 
-``` sql
+```sql
 select convert(varchar(8), getdate(), 112) as [DateKey]
 select cast([YYYMMDD] as datetime) as [DateTime]
 ```
@@ -834,94 +915,192 @@ select cast([YYYMMDD] as datetime) as [DateTime]
 
 ### Communication
 
-* **Fuzzy language** is vague language and it is common in the workspace
-* **Sought clarification**: What is the reason behind the request? What is the right question to ask?
-* [**Proxies**](https://en.wikipedia.org/wiki/Proxy_(statistics)): is a variable that stands in place of another variable (which is typically hard to get)
-* [**Price dumping**](https://en.wikipedia.org/wiki/Dumping_(pricing_policy)): occurs when manufacturers export a product to another country at a price below the normal price with an injuring effect (could be illegal)
-* **Line organization**: most requests come directly from your manager
-* **Functional organization**: requests can come from all over the company
-* **Majority rule**: a decision rule that selects alternatives with more than half the votes
-* **Prototyping** has several advantages like easier estimation, profitability decision, changes and goals flexibility
-* [**Supply Chain Management (SCM)**](https://en.wikipedia.org/wiki/Supply_chain_management): the management of the flow of goods and services
+- **Fuzzy language** is vague language and it is common in the workspace
+- **Sought clarification**: What is the reason behind the request? What is the right question to ask?
+- [**Proxies**](https://en.wikipedia.org/wiki/Proxy_(statistics)): is a variable that stands in place of another variable (which is typically hard to get)
+- [**Price dumping**](https://en.wikipedia.org/wiki/Dumping_(pricing_policy)): occurs when manufacturers export a product to another country at a price below the normal price with an injuring effect (could be illegal)
+- **Line organization**: most requests come directly from your manager
+- **Functional organization**: requests can come from all over the company
+- **Majority rule**: a decision rule that selects alternatives with more than half the votes
+- **Prototyping** has several advantages like easier estimation, profitability decision, changes and goals flexibility
+- [**Supply Chain Management** (SCM)](https://en.wikipedia.org/wiki/Supply_chain_management): the management of the flow of goods and services
 
 <br>
 
 ### Metrics
 
-Measurements that help management track of the overall health of the business.
+Measurements that help management track of the overall health of the business:
 
-* Observed across time
-* Calcullted separately at specific points in time
-* Understoon in a chronological context
+- Metrics are observed across time
+- Metrics are calcullted separately at specific points in time
+- Metrics are understood in a chronological context
 
 <br>
 
 A good metric should have the following characteristics:
-* **Accurate**: do not create anything wrongly measured
-* **Simple and intelligible**: easy to read for anyone
-* **Easy to drill down into**: are we doing good or bad and why
-* **Actionable**: ability to change things according to the measure
-* **Dynamic**: metrics need to change over reasonable periods of time
-* **Standardized**: everyone should see the same thing with no inconsistency
-* **Business Oriented**: should be relevant for the business
+
+- **Accurate**: do not create anything wrongly measured
+- **Simple and intelligible**: easy to read for anyone
+- **Easy to drill down into**: are we doing good or bad and why
+- **Actionable**: ability to change things according to the measure
+- **Dynamic**: metrics need to change over reasonable periods of time
+- **Standardized**: everyone should see the same thing with no inconsistency
+- **Business Oriented**: should be relevant for the business
 
 <br>
 
-Measure examples:
-* **Gross Domestic Product** (GDP)
-* **Inflation**
-* **Unemployment Rate**
-* **Revenue**
-* **Conversion Rate** (CR)
-* [**Average Order Value**](https://www.optimizely.com/optimization-glossary/average-order-value) (AOV): reduce payback period and increase Return on Investment (ROI) in retail
-* [**Net Promoter Score**](https://en.wikipedia.org/wiki/Customer_success) (NPS): quantifies customer satisfaction
-  * % Promoters - % Detractors = (\# Promoters - \# Detractors) / \# Total
-* [**Churn Rate**](https://www.profitwell.com/customer-churn/calculate-churn-rate) is when a customer ceases to be a customer (subscription-based)
-  * \# Churned Customers / \# Total Customers
-  * The more customers you lose, the smaller the pool of potential customers becomes
-  * Current customers are more likely to buy the more expensive products than new customers (subscription based)
-  * Churn rate informs how happy customers are with your product
-  * Happy customers provide free advertising
-  * Rretaining existing customers is more profitable than acquiring new customers
-    * [Applying and Evaluating Models to Predict Customer Attrition Using Data Mining Techniques](https://journals.lib.unb.ca/index.php/JCIM/article/view/442/735)
+Examples:
+
+- **Gross Domestic Product** (GDP)
+- **Inflation**
+- **Unemployment Rate**
+- **Revenue**
+- **Conversion Rate** (CR)
+- [**Average Order Value**](https://www.optimizely.com/optimization-glossary/average-order-value) (AOV): reduce payback period and increase Return on Investment (ROI) in retail
+- [**Net Promoter Score**](https://en.wikipedia.org/wiki/Customer_success) (NPS): quantifies customer satisfaction
+  - % Promoters - % Detractors = (\# Promoters - \# Detractors) / \# Total
+- [**Churn Rate**](https://www.profitwell.com/customer-churn/calculate-churn-rate) is when a customer ceases to be a customer (subscription-based)
+  - \# Churned Customers / \# Total Customers
+  - The more customers you lose, the smaller the pool of potential customers becomes
+  - Current customers are more likely to buy the more expensive products than new customers (subscription based)
+  - Churn rate informs how happy customers are with your product
+  - Happy customers provide free advertising
+  - Rretaining existing customers is more profitable than acquiring new customers
+    - [Applying and Evaluating Models to Predict Customer Attrition Using Data Mining Techniques](https://journals.lib.unb.ca/index.php/JCIM/article/view/442/735)
 
 <br><hr><br>
 
-## Probability, Statistics and Math
+## Probability and Statistics
 
-* [Introducing KaTeX](https://katex.org/docs/supported.html): The fastest math typesetting library for the web
-* [Correlation](https://en.wikipedia.org/wiki/Correlation_and_dependence): attributes relations [-1, 1\]
-  * [Pearson correlation coefficient](https://en.wikipedia.org/wiki/Pearson_correlation_coefficient)
-
-<br>
-
-### Analysis Criterias and Helpers
-* [Weighted sum model (WSM)](https://en.wikipedia.org/wiki/Weighted_sum_model): is the best known and simplest multi-criteria decision analysis (MCDA)
-  * $A_i^{WSM-score} = \sum_{j=1}^{n} w_j a_{ij} \text {, for i = 1, 2, 3, \dots, m}$
-* [Min-Max Feature scaling (Normalization)](https://en.wikipedia.org/wiki/Feature_scaling): compare different scales in a meaningful way [0, 1\]
-  * $x' = \frac {x-\min(x)} {\max(x) - \min(x)}$
+- [**Introducing KaTeX**](https://katex.org/docs/supported.html): The fastest math typesetting library for the web
+- **Granularity**: the level of detail at which data is stored
+- **Rule of thumb**: principe based on practical experience rather than theory
 
 <br>
 
-### Box Plot Hints
+### Sampling
 
-* Quartile indexes:
-  * $i_1 = (n+1) * 0.25$
-  * $i_3 = (n+1) * 0.75$
-* Outliers boundaries:
-  * $\min = Q_1 - 1.5* \text{IQR}$
-  * $\max = Q_3 + 1.5 * \text{IQR}$
+- **Population**: the set of all individuals relevant to a particulas statistical question 
+- **Sample**: a smaller group selected from a population
+- **Parameter**: a population metric
+- **Statistic**: a sample metric
+- **Sampling error**: difference between the metrics of a population and the metrics of a sample
+  - sampling error = parameter - statistic
+- **Representativeness**: every individual in the population has an equal chance to be selected, leading to smaller sampling error
 
 <br>
 
-### Statistics with Python
+[Sampling methods](https://en.wikipedia.org/wiki/Sampling_(statistics)#Sampling_methods):
 
-| Description             | Syntax    |
-| ----------------------- | --------- |
-| Correlaiton coefficient | df.corr() |
+- **Simple random sampling** (SRS): a sampling method using random numbers to select a few sample units `# pd.sample()`
+- **Stratified sampling**: organize (**stratify**) data into different groups (**stratums**), and then sample randomly each group
+  - Maximize the variability between strata (different groups)
+  - Minimize the variability within each stratum
+  - The stratification criterion should be strongly correlated with the property you're trying to measure
+- **Сluster sampling**: picking only a few of the individual data souces (**clusters**)
+- **Descriptive statistics**: describing a sample or a population by measuring and visualizing stuff
+- **Inferential statistics**: using a sample (**infering**) to draw conclusions about a population
+
+<br>
+
+### Variables
+
+-*Variable** is a property with varying value. Can be divided into two categories:
+
+- **Quantitative variable**: describes *how much there is of something*
+  - We **can** tell the *size* or *direction* of the difference
+  - e.g. height, age (date), points, experience
+- **Qualitative variable** (Categorical): describes *what or how*
+  - We **cannot** tell the *size* and *direction* of the difference
+  - e.g. name, position, place, college
+
+<br>
+
+-*Scales of measurement** is the system of rules that define how each variable is measured:
+
+- **The Nominal** scale: measuring **qualitative** variables only
+- **An Ordinal** scale: measuring **quantitative** variables only
+  - We **can** tell the *direction* of the difference
+  - We **cannot** tell the *size* of the difference (intervals between ranks could differ)
+- **An Interval** or **Ratio** scales: measuring **quantitative** variables only
+  - Preserves **the order** between values and has **well-defined intervals** using real numbers
+  - On a **Ratio** scale, the zero point means "no quantity", while on an **Interval** scale it indicates the presence of a quantity
+  - Using a **Ratio** scale we can measure the difference in terms of ratios (division)
+  - **Discrete variable**: there is no possible intermediate value between any two adjacent values
+  - **Continuous variable**: contains an infinity of values between any two values
+
+<br>
+
+### Frequency Distributions
+
+- **Frequency Distribution Table** shows how frequencies are distributed
+- **Grouped Frequency Distribution Talbes**: each group (interval) is called a *class interval*
+  - `s.value_counts(bins=intervals)`
+  - `pd.interval_range(start=0, end=100, freq=10)`
+  - there should be a good balance between information and comprehensibility
+
+<br>
+
+Types of Frequencies:
+
+- **Absolute frequencies**: absolute counts `# s.value_counts()`
+- **Relative frequencies**: proportions and percentages `# s.value_counts(normalize=True)`
+
+<br>
+
+Percentiles and Quartiles:
+
+- **Percentile rank** of a score is the percentage of scores in its distribution that are less than it
+- **Percentile** and percentile rank are related terms, but percentile is measured in percentages
+  - `from scipy.stats import percentileofscore`
+  - percentileofscore(a=series, score=value, kind='weak')
+- **Quartiles**: the *three* percentiles, 25th (lower quartile), the 50th (middle quartile), and the 75th (upper quartile), that divide the distribution in *four* equal parts `# s.describe(percentiles=[])`
+
+<br>
+
+Types of Distributions:
+
+- **Skewed Distributions**
+  - **Left skewed** (negatively skewed): the tail points in the direction of negative numbers
+  - **Right skewed** (positively skewed): the tail points in the direction of positive numbers
+- **Symmetrical Distributions**
+  - **Normal distribution** (Gaussian distribution): the values pile up in the middle and gradually decrease toward both ends
+  - **Uniform distribution**: the values are distributed uniformly
+
+<br>
+
+Visualizing Distributions:
+
+- *Nominal* and *Ordinal* variables is common to visualize using **bar plot**, **pie chart** (better sense for the relative frequencies)
+- The most commonly used graph for visualizing *distributions* is the **histogram**
+- Smoothed histogram that display *densities* (probabilities) instead of frequencies is called **Kernel Density Estimate** (KDE) plot
+- When we need to compare *multiple* (> 4) distributions, it is better to use **strip plot** or **box plot**
+  - **Quartiles**
+    - Lower quartile index: $Qi_1 = (n+1) * 0.25$
+    - Upper quartile index: $Qi_3 = (n+1) * 0.75$
+    - Interquartile range: $\text{IQR} = \text{upper quartile} - \text{lower quartile}$
+  - **Outliers** are values in the distribution that are much larger or much lower than the rest of the values
+    - Lower bound: $\min = Q_1 - 1.5* \text{IQR}$
+    - Upper bound: $\max = Q_3 + 1.5 * \text{IQR}$
 
 <br><hr><br>
 
 ## Machine Learning
 
+- [PyTorch for Deep Learning - Full Course / Tutorial](https://www.youtube.com/watch?v=GIsg-ZUy0MY)
+
+<br>
+
+- [**Correlation**](https://en.wikipedia.org/wiki/Correlation_and_dependence): attributes relations [-1, 1\]
+  - [**Pearson correlation coefficient**](https://en.wikipedia.org/wiki/Pearson_correlation_coefficient): `df.corr()`
+- [**Weighted sum model** (WSM)](https://en.wikipedia.org/wiki/Weighted_sum_model): is the best known and simplest multi-criteria decision analysis (MCDA)
+  - $A_i^{WSM-score} = \sum_{j=1}^{n} w_j a_{ij} \text {, for i = 1, 2, 3, \dots, m}$
+- [**Min-Max Feature scaling** (Normalization)](https://en.wikipedia.org/wiki/Feature_scaling): compare different scales in a meaningful way [0, 1\]
+  - $x' = \frac {x-\min(x)} {\max(x) - \min(x)}$
+
 <br><hr><br>
+
+## Computer Vision
+
+- [OpenCV Course - Full Tutorial with Python](https://www.youtube.com/watch?v=oXlwWbU8l2o)
+
