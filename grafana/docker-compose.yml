@@ -1,0 +1,9 @@
+version: "3"
+
+services:
+  grafana:
+    build: .
+    volumes:
+      - ./grafana:/var/lib/grafana
+    ports:
+      - 9000:3000
