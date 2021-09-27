@@ -31,7 +31,9 @@
     - [DDL Operations](#ddl-operations)
     - [Normalization](#normalization)
     - [SQL with Python](#sql-with-python)
+    - [SQLite](#sqlite)
     - [SQLite Shell](#sqlite-shell)
+    - [SQLAlchemy](#sqlalchemy)
     - [SQL Server Snippets](#sql-server-snippets)
   - [Business](#business)
     - [Communication](#communication)
@@ -40,6 +42,7 @@
     - [Sampling](#sampling)
     - [Variables](#variables)
     - [Frequency Distributions](#frequency-distributions)
+    - [Averages and Variability](#averages-and-variability)
   - [Machine Learning](#machine-learning)
   - [Computer Vision](#computer-vision)
 
@@ -871,6 +874,8 @@ alter table <table_name>
 
 <br>
 
+### SQLite
+
 | Description             | Syntax                             |
 | ----------------------- | ---------------------------------- |
 | Import module           | import sqlite3                     |
@@ -897,6 +902,21 @@ alter table <table_name>
 | Run in shell                | .shell <command\>     |
 | Quit                        | .quit                 |
 | View the schema for a table | .schema <table_name\> |
+
+<br>
+
+### SQLAlchemy
+
+```python
+from sqlalchemy import create_engine
+engine = create_engine(f'mysql://{LOGIN}:{PASS}@{URL}/{DB}?charset=utf8')
+with engine.begin() as conn:
+    cursor = conn.execute('''
+        select value
+        from table
+        ''')
+df = pd.DataFrame(cursor.all())
+```
 
 <br>
 
@@ -1005,7 +1025,7 @@ Examples:
 
 ### Variables
 
--*Variable** is a property with varying value. Can be divided into two categories:
+**Variable** is a property with varying value. Can be divided into two categories:
 
 - **Quantitative variable**: describes *how much there is of something*
   - We **can** tell the *size* or *direction* of the difference
@@ -1016,12 +1036,13 @@ Examples:
 
 <br>
 
--*Scales of measurement** is the system of rules that define how each variable is measured:
+**Scales of measurement** is the system of rules that define how each variable is measured:
 
 - **The Nominal** scale: measuring **qualitative** variables only
 - **An Ordinal** scale: measuring **quantitative** variables only
   - We **can** tell the *direction* of the difference
   - We **cannot** tell the *size* of the difference (intervals between ranks could differ)
+  - We **should be aware** calculating averages for ordinal variables (different results with shifted encoding systems)
 - **An Interval** or **Ratio** scales: measuring **quantitative** variables only
   - Preserves **the order** between values and has **well-defined intervals** using real numbers
   - On a **Ratio** scale, the zero point means "no quantity", while on an **Interval** scale it indicates the presence of a quantity
@@ -1053,7 +1074,7 @@ Percentiles and Quartiles:
 - **Percentile rank** of a score is the percentage of scores in its distribution that are less than it
 - **Percentile** and percentile rank are related terms, but percentile is measured in percentages
   - `from scipy.stats import percentileofscore`
-  - percentileofscore(a=series, score=value, kind='weak')
+  - `percentileofscore(a=series, score=value, kind='weak')`
 - **Quartiles**: the *three* percentiles, 25th (lower quartile), the 50th (middle quartile), and the 75th (upper quartile), that divide the distribution in *four* equal parts `# s.describe(percentiles=[])`
 
 <br>
@@ -1082,6 +1103,26 @@ Visualizing Distributions:
   - **Outliers** are values in the distribution that are much larger or much lower than the rest of the values
     - Lower bound: $\min = Q_1 - 1.5* \text{IQR}$
     - Upper bound: $\max = Q_3 + 1.5 * \text{IQR}$
+
+
+<br>
+
+### Averages and Variability
+
+- **The Mean μ (The Arithmetic Mean / Parameter)**: total sum divided by total number of values (distances belove and above are the same) $\dfrac{1}{N}(\sum_{i=1}^N x_i)$
+- **Sample Mean x̄ (Statistics)**: there are three possible scenarios: overestimation, underestimation, equal estimation (when x̄>μ and x̄<μ, sampling error occurs)
+- **Sampling Error**: $μ - x̄$
+- **Sample Representativity**: the more representative a sample is, the closer x̄ will be to μ
+- **Sample Size**: the larger the sample, the more chances we have to get a representative sample and less sampling error
+- **Unbiased Estimator**: statistic that are on average equal to the parameter it estimates
+  - This is true for any distribution of real numbers with equal sample size
+
+<br>
+
+- **The Weighted Mean**: takes into account the different weights $\dfrac{\sum_{i=1}^{N} x_i w_i}{\sum_{i=1}^{N} w_i}$
+  - `np.average(houses_per_year['Mean Price'], weights=houses_per_year['Houses Sold'])`
+- **Open-Ended Distribution**: distribution with open boundary, for example "10 or more / 10+"
+- **Median**: the middle value in a sorted distribution ($Q_2$), resistant to outliers (robust statistics) `# s.median()`
 
 <br><hr><br>
 
