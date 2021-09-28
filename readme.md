@@ -1109,20 +1109,18 @@ Visualizing Distributions:
 
 ### Averages and Variability
 
-- **The Mean μ (The Arithmetic Mean / Parameter)**: total sum divided by total number of values (distances belove and above are the same) $\dfrac{1}{N}(\sum_{i=1}^N x_i)$
+- **Arithmetic Mean μ (Parameter)**: total sum divided by total number of values (distances belove and above are the same) $\dfrac{1}{N}(\sum_{i=1}^N x_i)$
 - **Sample Mean x̄ (Statistics)**: there are three possible scenarios: overestimation, underestimation, equal estimation (when x̄>μ and x̄<μ, sampling error occurs)
 - **Sampling Error**: $μ - x̄$
 - **Sample Representativity**: the more representative a sample is, the closer x̄ will be to μ
 - **Sample Size**: the larger the sample, the more chances we have to get a representative sample and less sampling error
 - **Unbiased Estimator**: statistic that are on average equal to the parameter it estimates
   - This is true for any distribution of real numbers with equal sample size
-
-<br>
-
-- **The Weighted Mean**: takes into account the different weights $\dfrac{\sum_{i=1}^{N} x_i w_i}{\sum_{i=1}^{N} w_i}$
+- **Weighted Mean**: takes into account the different weights $\dfrac{\sum_{i=1}^{N} x_i w_i}{\sum_{i=1}^{N} w_i}$
   - `np.average(houses_per_year['Mean Price'], weights=houses_per_year['Houses Sold'])`
 - **Open-Ended Distribution**: distribution with open boundary, for example "10 or more / 10+"
 - **Median**: the middle value in a sorted distribution ($Q_2$), resistant to outliers (robust statistics) `# s.median()`
+- **Mode**: the most frequent value in the destribution
 
 <br><hr><br>
 
