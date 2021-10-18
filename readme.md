@@ -1120,7 +1120,17 @@ Visualizing Distributions:
   - `np.average(houses_per_year['Mean Price'], weights=houses_per_year['Houses Sold'])`
 - **Open-Ended Distribution**: distribution with open boundary, for example "10 or more / 10+"
 - **Median**: the middle value in a sorted distribution ($Q_2$), resistant to outliers (robust statistics) `# s.median()`
-- **Mode**: the most frequent value in the destribution
+- **Mode**: the most frequent value in the destribution `# s.mode()`
+  - The best option for discrete values, because it gives you the whole number
+  - The distribution could be unimodal, bimodal or even multimodal
+
+<br>
+
+|        | Can be used for                           | Can't be used for                                                             | Ideal for                                                                       |
+| ------ | ----------------------------------------- | ----------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| Mean   | Interval or Ratio <br> Continuous Ordinal | Nominal <br> Non-numeric Ordinal <br> For different weights use weighted mean | Summarizing numerical distributions <br> with each value in the distribution    |
+| Median | Interval or Ratio <br> Numeric Ordinal    | Nominal <br> Non-numeric Ordinal                                              | Summarizing numerical distributions with outliers <br> Open-ended distributions |
+| Mode   | Interval or Ratio <br> Nominal or Ordinal | Uniform distributions <br> Continuous Ordinal                                 | Nominal or Non-numeric Ordinal <br> Discrete values                             |
 
 <br><hr><br>
 
