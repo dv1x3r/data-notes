@@ -5,7 +5,9 @@
   - [Shell](#shell)
     - [Command Line with bash](#command-line-with-bash)
     - [Command Line Shortcuts (Hotkeys)](#command-line-shortcuts-hotkeys)
-    - [Docker](#docker)
+  - [Docker](#docker)
+    - [Docker CLI](#docker-cli)
+    - [Docker-Compose CLI](#docker-compose-cli)
   - [API](#api)
     - [HTTP Request Status Codes](#http-request-status-codes)
     - [API Querying with Python](#api-querying-with-python)
@@ -144,13 +146,62 @@
 | Commander info    | CTRL + Q   | CTRL + X, I                   |
 | Commander extract | SHIFT + F2 |                               |
 
+<br><hr><br>
+
+## Docker
+
+- [docs.docker.com](https://docs.docker.com/compose/compose-file/compose-file-v3/)
+- [devhints.io/docker](https://devhints.io/docker/)
+- [devhints.io/docker-compose](https://devhints.io/docker-compose/)
+- [devhints.io/dockerfile](https://devhints.io/dockerfile/)
+
 <br>
 
-### Docker
+### Docker CLI
 
-| Command      | Syntax                                                                       |
-| ------------ | ---------------------------------------------------------------------------- |
-| Compose file | docker-compose [-f docker-compose.dev.yml\] <up, down, start, build, config> |
+| Command                                       | Syntax                                                                                                  |
+| --------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| List running containers (-a for all)          | docker ps                                                                                               |
+| Show running container stats (CPU and Memory) | docker stats                                                                                            |
+| Show daemon disk space usage                  | docker system df                                                                                        |
+| Show container processes                      | docker top <container name>                                                                             |
+| Show container logs                           | docker logs <container name> [-ft\]                                                                     |
+| Show container modified files                 | docker diff <container name>                                                                            |
+| Show container mapped ports                   | docker ports <container name>                                                                           |
+| Start a stopped container                     | docker start <container name>                                                                           |
+| Stop a running container                      | docker stop <container name>                                                                            |
+| Kill a running container                      | docker kill <container name>                                                                            |
+| Remove specific container (-f for running)    | docker rm <container name>                                                                              |
+| Remove stopped containers (-a for running)    | docker сontainer prune                                                                                  |
+| Create an image out of container              | docker commit <container name>                                                                          |
+| List available images                         | docker images                                                                                           |
+| Download an image                             | docker pull <image name>                                                                                |
+| Remove specific image                         | docker rmi <image name>                                                                                 |
+| Remove dangling images (-a for unused)        | docker image prune                                                                                      |
+| Create an image out of Dockerfile             | docker build .                                                                                          |
+| List all volumes                              | docker volume ls                                                                                        |
+| SSH into container                            | docker exec -it <container name> /bin/sh or bash                                                        |
+| Build and Run                                 | docker run [--name CONTAINER\] [-p HOST:CONTAINER -P\] [-v LOCAL:CONTAINER\] [-d\] [--rm\] <image name> |
+| Copy files between container and host         | docker cp <CONTAINER:SOURCE TARGET>                                                                     |
+| Rename a container                            | docker rename <old name> <new name>                                                                     |
+
+<br>
+
+### Docker-Compose CLI
+
+| Command                                    | Syntax                                                         | Notes                                                  |
+| ------------------------------------------ | -------------------------------------------------------------- | ------------------------------------------------------ |
+| List running services                      | docker-compose ps                                              | Recommended                                            |
+| Build                                      | docker-compose build <service(s)>                              | Recommended                                            |
+| Build, re(create), start and attach        | docker-compose [-f docker-compose.dev.yml\] up -d <service(s)> | Recommended                                            |
+| Start existing container                   | docker-compose start <service(s)>                              | Not recreated and env vars are not updated             |
+| Stop and remove ALL containters            | docker-compose down                                            | Specific services cannot be specified                  |
+| Stop runnning containters without removing | docker-compose stop <service(s)>                               | Recommended                                            |
+| Stop and start containers                  | docker-compose restart <service(s)>                            | Build context (including env vars) are not updated     |
+| Force to stop                              | docker-compose kill <service(s)>                               | SIGKILL: use only if won't stop                        |
+| Remove stopped containers                  | docker-compose rm -fsv <service(s)>                            | Recommended (force, stop the container first, volumes) |
+| Execute command                            | docker-compose exec <service(s)> <cmd>                         | Recommended                                            |
+
 
 <br><hr><br>
 
