@@ -534,8 +534,8 @@ print(mc.attribute_1)
 
 | Description  | Syntax                          |
 | ------------ | ------------------------------- |
-| Create       | py -m venv env                  |
-| Activate     | .\env\Scripts\activate          |
+| Create       | py -m venv venv                 |
+| Activate     | source venv\Scripts\activate    |
 | Deactivate   | deactivate                      |
 | Dependencies | pip install -r requirements.txt |
 
