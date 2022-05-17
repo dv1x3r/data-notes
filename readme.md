@@ -21,6 +21,7 @@
     - [Object-Oriented](#object-oriented)
     - [asyncio](#asyncio)
     - [venv](#venv)
+    - [alembic](#alembic)
     - [PyQT5](#pyqt5)
     - [NumPy Arrays](#numpy-arrays)
     - [Pandas Transform and Clean](#pandas-transform-and-clean)
@@ -538,6 +539,18 @@ print(mc.attribute_1)
 | Activate     | source venv\Scripts\activate    |
 | Deactivate   | deactivate                      |
 | Dependencies | pip install -r requirements.txt |
+
+<br>
+
+### alembic
+
+| Description       | Syntax                                          |
+| ----------------- | ----------------------------------------------- |
+| Init              | alembic init alembic                            |
+| Create migration  | alembic revision --autogenerate [-m "message"\] |
+| Migrate upgrade   | alembic upgrade head                            |
+| Migrate downgrade | alembic downgrade -1                            |
+| History           | alembic history                                 |
 
 <br>
 
