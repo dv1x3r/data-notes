@@ -3,6 +3,8 @@ install:
 	pip install poetry
 	poetry install
 	. .venv/bin/activate; prisma generate
+	. .venv/bin/activate; prisma migrate deploy
+	. .venv/bin/activate; python prisma/seed.py
 
 .PHONY: debug
 debug:
