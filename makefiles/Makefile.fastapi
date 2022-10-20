@@ -2,6 +2,7 @@
 install:
 	pip install poetry
 	poetry install
+	. .venv/bin/activate; prisma generate
 
 .PHONY: debug
 debug:
