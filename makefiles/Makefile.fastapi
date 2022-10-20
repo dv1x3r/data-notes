@@ -14,6 +14,10 @@ debug:
 start:
 	. .venv/bin/activate; uvicorn --host 127.0.0.1 --port 8000 --workers 4 app.main:app 
 
+.PHONY: test
+test:
+	. .venv/bin/activate; pytest
+
 .PHONY: db-generate
 db-generate:
 	. .venv/bin/activate; prisma generate
