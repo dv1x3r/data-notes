@@ -2,6 +2,9 @@
 install:
 	pip install poetry
 	poetry install
+	. .venv/bin/activate; prisma generate
+	. .venv/bin/activate; prisma migrate deploy
+	. .venv/bin/activate; python prisma/seed.py
 
 .PHONY: debug
 debug:
@@ -10,6 +13,10 @@ debug:
 .PHONY: start
 start:
 	. .venv/bin/activate; uvicorn --host 127.0.0.1 --port 8000 --workers 4 app.main:app 
+
+.PHONY: test
+test:
+	. .venv/bin/activate; pytest
 
 .PHONY: db-generate
 db-generate:
