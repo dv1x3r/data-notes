@@ -12,7 +12,7 @@ function parse_git_branch() {
 
 setopt PROMPT_SUBST
 #export PROMPT='%F{243}%n@%m%f %F{197}%2~%f %F{39}$(parse_git_branch)%f%% '
-export PROMPT='%F{white}%m%f %2~ %F{cyan}$(parse_git_branch)%f%% '
+export PROMPT='%F{white}%m%f %2~ %F{39}$(parse_git_branch)%f%% '
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 
 export EDITOR="nvim"
