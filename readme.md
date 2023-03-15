@@ -48,6 +48,7 @@
     - [Averages and Variability](#averages-and-variability)
   - [Machine Learning](#machine-learning)
   - [Computer Vision](#computer-vision)
+  - [Blender](#blender)
 
 <br><hr><br>
 
@@ -1217,3 +1218,74 @@ Visualizing Distributions:
 
 - [OpenCV Course - Full Tutorial with Python](https://www.youtube.com/watch?v=oXlwWbU8l2o)
 
+<br><hr><br>
+
+## Blender
+
+- [Blender Beginner Donut Tutorial](https://www.youtube.com/playlist?list=PLjEaoINr3zgFX8ZsChQVQsuDSjEqdWMAD)
+
+```
+Modelling
+
+Touchpad = Rotate
+Shift + Touchpad = Move
+Ctrl + Touchpad = Zoom
+
+Drag Corner = Join / New Window
+Tab = Object / Edit
+
+Shift + A = New Object
+Shift + D = Duplicate
+Shift + Tab (Ctrl) = Snap (Fact Project + Individual Elements)
+
+Ctrl + Tab = Mode Wheel
+Ctrl + A = Apply Stuff (scale, rotation)
+
+~ = View Wheel
+N = Properties
+X = Delete
+O = Proportional Editing (wheel)
+Ctrl + P = Parent Selected
+P = Separate
+Select -> Select Random
+L = Select Linked
+Ctrl + L = Link Stuff (Shared Material)
+Ctrl + R = Loop Cut
+Ctrl + B = Bevel Edge
+H = Hide
+Alt + H = Unhide All
+Alt + G = Reset Location
+Alt + Z = X-Ray
+Alt + Click = Edge Loop
+
+G = Grab
+R = Rotate
+S = Scale
+Alt + S = Directional Scale
+x/y/z = Choose Axis
+
+// Modifiers
+
+Subdivision - create extra faces
+Solidify - add a volume
+Shrinkwrap - wrap aroud inner mesh
+Displace - randomize stuff using textures
+
+// Sculpting
+
+F = Radius
+Shift + F = Strength
+
+X = Draw
+Ctrl + X = Reverse Draw
+
+G = Grab
+I = Inflate
+Shift + S = Smooth Details
+
+Brushes -> Stroke -> Airbrush = Click and Hold
+
+// Animation
+
+I = Insert Keyframe
+```
