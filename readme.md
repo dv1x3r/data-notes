@@ -1188,7 +1188,7 @@ Visualizing Distributions:
 - **Mode**: the most frequent value in the destribution `# s.mode()`
   - The best option for discrete values, because it gives you the whole number
   - The distribution could be unimodal, bimodal or even multimodal (in case of more than one mode)
-- "IN PROGRESS" **Range of Distribution**: measure the variability of a distribution $range(X) = max(X) - min(X)$
+- **Range of Distribution**: measure the variability of a distribution $\text{average distance} = \dfrac{\sum_{i=1}^{N} (x_i - \mu)}{N}$
 
 <br>
 
