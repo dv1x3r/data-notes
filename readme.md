@@ -1190,7 +1190,8 @@ Visualizing Distributions:
 - **Median**: the middle value in a sorted distribution ($Q_2$), resistant to outliers (robust statistics) `# s.median()`
 - **Mode**: the most frequent value in the destribution `# s.mode()`
   - The best option for discrete values, because it gives you the whole number
-  - The distribution could be unimodal, bimodal or even multimodal
+  - The distribution could be unimodal, bimodal or even multimodal (in case of more than one mode)
+- **Range of Distribution**: measure the variability of a distribution $\text{average distance} = \dfrac{\sum_{i=1}^{N} (x_i - \mu)}{N}$
 
 <br>
 
@@ -1199,6 +1200,14 @@ Visualizing Distributions:
 | Mean   | Interval or Ratio <br> Continuous Ordinal | Nominal <br> Non-numeric Ordinal <br> For different weights use weighted mean | Summarizing numerical distributions <br> with each value in the distribution    |
 | Median | Interval or Ratio <br> Numeric Ordinal    | Nominal <br> Non-numeric Ordinal                                              | Summarizing numerical distributions with outliers <br> Open-ended distributions |
 | Mode   | Interval or Ratio <br> Nominal or Ordinal | Uniform distributions <br> Continuous Ordinal                                 | Nominal or Non-numeric Ordinal <br> Discrete values                             |
+
+<br>
+
+|        | Value | Reporting to non-technical audiences |
+| ------ | ----- | ------------------------------------ |
+| Mean   | 1.04  | The average house has 1.04 kitchens  |
+| Median | 1     | The average house has one kitchen    |
+| Mode   | 1     | The typical house has one kitchen    |
 
 <br><hr><br>
 
