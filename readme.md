@@ -49,6 +49,7 @@
   - [Machine Learning](#machine-learning)
   - [Computer Vision](#computer-vision)
   - [Blender](#blender)
+  - [FFmpeg](#ffmpeg)
 
 <br><hr><br>
 
@@ -528,6 +529,8 @@ print(mc.attribute_1)
 | Start Event Loop                 | try: loop.run_until_complete(main()) |
 | Close Event Loop                 | finally: loop.close()                |
 | Currently pending tasks          | asyncio.Task.all_tasks()             |
+| Create Task Group                | async with asyncio.TaskGroup() as tg |
+| Add Task to the Group            | tg.create_task(func())               |
 
 
 <br>
@@ -1065,7 +1068,7 @@ Examples:
 
 ### Sampling
 
-- **Population**: the set of all individuals relevant to a particulas statistical question 
+- **Population**: the set of all individuals relevant to a particulas statistical question
 - **Sample**: a smaller group selected from a population
 - **Parameter**: a population metric
 - **Statistic**: a sample metric
@@ -1288,4 +1291,21 @@ Brushes -> Stroke -> Airbrush = Click and Hold
 // Animation
 
 I = Insert Keyframe
+```
+
+<br><hr><br>
+
+## FFmpeg
+
+```
+ffplay - play video
+ffprobe - get metadata
+ffmpeg -i vids.txt -f concat
+ffmpeg -i input.mp4 output.mp4
+-c:v [mpeg4, libx264, libx265] -c:a [mp3, aac]
+-c copy (skip re-encoding)
+-b:v 7500k
+-r 30
+-s 1920x1080
+-ss 00:00:00 -t 00:00:00
 ```
