@@ -1316,5 +1316,7 @@ ffmpeg -i input.mp4 output.mp4
 -b:v 7500k
 -r 30
 -s 1920x1080
--ss 00:00:00 -t 00:00:00
+-ss 00:00:00 -to 00:00:00
+-ac 2 (downmix to stereo, do not use -c:a copy)
+-map_chapters -1 (remove chapters)
 ```
