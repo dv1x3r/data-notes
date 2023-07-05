@@ -1191,7 +1191,11 @@ Visualizing Distributions:
 - **Mode**: the most frequent value in the destribution `# s.mode()`
   - The best option for discrete values, because it gives you the whole number
   - The distribution could be unimodal, bimodal or even multimodal (in case of more than one mode)
-- **Range of Distribution**: measure the variability of a distribution $\text{average distance} = \dfrac{\sum_{i=1}^{N} (x_i - \mu)}{N}$
+- **Range of Distribution**: measure the variability of a distribution (average distance, dispersion) `# s.std()`
+  - $\text{mean absolute deviation} = \dfrac{\sum_{i=1}^{N} |x_i - \mu|}{N}$
+  - $\text{mean squared deviation (variance)} = \dfrac{\sum_{i=1}^{N} (x_i - \mu)^2}{N}$
+  - $\text{standard deviation} = \sqrt{\text{variance}}$
+  - Bessel's correction suggests to divide by n-1, instead of n, to prevent sample underestimation `# np.std(list, ddof=1)`
 
 <br>
 
