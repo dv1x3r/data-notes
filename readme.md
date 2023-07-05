@@ -1323,4 +1323,6 @@ ffmpeg -i input.mp4 output.mp4
 -ss 00:00:00 -to 00:00:00
 -ac 2 (downmix to stereo, do not use -c:a copy)
 -map_chapters -1 (remove chapters)
+-map 0 (keep all audio channels)
+-sn (remove subtitiles)
 ```
