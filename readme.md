@@ -205,7 +205,6 @@
 | Remove stopped containers                  | docker-compose rm -fsv <service(s)>                            | Recommended (force, stop the container first, volumes) |
 | Execute command                            | docker-compose exec <service(s)> <cmd>                         | Recommended                                            |
 
-
 <br><hr><br>
 
 ## API
@@ -368,24 +367,24 @@
 | A: insert cell above                                                                     | Ctrl-S: Save and Checkpoint            |
 | B: insert cell below                                                                     | Down: move cursor down                 |
 | X: cut selected cells                                                                    | Up: move cursor up                     |
-| C: copy selected cells                                                                   |
-| Shift-V: paste cells above                                                               |
-| V: paste cells below                                                                     |
-| Z: undo cell deletion                                                                    |
-| D,D: delete selected cells                                                               |
-| Shift-M: merge selected cells, or current cell with cell below if only one cell selected |
-| Ctrl-S: Save and Checkpoint                                                              |
-| S: Save and Checkpoint                                                                   |
-| L: toggle line numbers                                                                   |
-| O: toggle output of selected cells                                                       |
-| Shift-O: toggle output scrolling of selected cells                                       |
-| H: show keyboard shortcuts                                                               |
-| I,I: interrupt kernel                                                                    |
-| 0,0: restart the kernel (with dialog)                                                    |
-| Esc: close the pager                                                                     |
-| Q: close the pager                                                                       |
-| Shift-Space: scroll notebook up                                                          |
-| Space: scroll notebook down                                                              |
+| C: copy selected cells                                                                   |                                        |
+| Shift-V: paste cells above                                                               |                                        |
+| V: paste cells below                                                                     |                                        |
+| Z: undo cell deletion                                                                    |                                        |
+| D,D: delete selected cells                                                               |                                        |
+| Shift-M: merge selected cells, or current cell with cell below if only one cell selected |                                        |
+| Ctrl-S: Save and Checkpoint                                                              |                                        |
+| S: Save and Checkpoint                                                                   |                                        |
+| L: toggle line numbers                                                                   |                                        |
+| O: toggle output of selected cells                                                       |                                        |
+| Shift-O: toggle output scrolling of selected cells                                       |                                        |
+| H: show keyboard shortcuts                                                               |                                        |
+| I,I: interrupt kernel                                                                    |                                        |
+| 0,0: restart the kernel (with dialog)                                                    |                                        |
+| Esc: close the pager                                                                     |                                        |
+| Q: close the pager                                                                       |                                        |
+| Shift-Space: scroll notebook up                                                          |                                        |
+| Space: scroll notebook down                                                              |                                        |
 
 <br>
 
@@ -532,7 +531,6 @@ print(mc.attribute_1)
 | Create Task Group                | async with asyncio.TaskGroup() as tg |
 | Add Task to the Group            | tg.create_task(func())               |
 
-
 <br>
 
 ### venv
@@ -628,7 +626,7 @@ print(mc.attribute_1)
 | Returning or setting column names       | df.columns                                                          |
 | Returning the dimensions of a dataframe | dt.shape                                                            |
 | Create dataframe/series                 | pd.DataFrame({'col': []}, columns=cols) \| pd.Series([])            |
-| Series to dataframe/list                | s.to_frame('col')  \| s.tolist()                                    |
+| Series to dataframe/list                | s.to_frame('col') \| s.tolist()                                     |
 
 <br>
 
@@ -714,20 +712,14 @@ print(mc.attribute_1)
 
 <br>
 
--*Pandas Combining DataFrames**
+-_Pandas Combining DataFrames_*
 
-- Union  
-  - pd.concat(df_list, axis, ignore_index=True)  
+- Union
+  - pd.concat(df_list, axis, ignore_index=True)
   - df.append() # shortcut
 
 - Join
-  - pd.merge(  
-    left=df1, right=df2,
-    how='inner', on='col',  
-    on_left='col1', on_right='col2',  
-    left_index = True, right_index = True,  
-    suffixes=('_x', '_y')  
-    )
+  - pd.merge(left=df1, right=df2, how='inner', on='col', on_left='col1', on_right='col2', left_index = True, right_index = True, suffixes=('_x', '_y'))
   - df.merge() # shortcut
   - df.join() # using indexes
 
@@ -1095,11 +1087,11 @@ Examples:
 
 **Variable** is a property with varying value. Can be divided into two categories:
 
-- **Quantitative variable**: describes *how much there is of something*
-  - We **can** tell the *size* or *direction* of the difference
+- **Quantitative variable**: describes _how much there is of something_
+  - We **can** tell the _size_ or _direction_ of the difference
   - e.g. height, age (date), points, experience
-- **Qualitative variable** (Categorical): describes *what or how*
-  - We **cannot** tell the *size* and *direction* of the difference
+- **Qualitative variable** (Categorical): describes _what or how_
+  - We **cannot** tell the _size_ and _direction_ of the difference
   - e.g. name, position, place, college
 
 <br>
@@ -1108,8 +1100,8 @@ Examples:
 
 - **The Nominal** scale: measuring **qualitative** variables only
 - **An Ordinal** scale: measuring **quantitative** variables only
-  - We **can** tell the *direction* of the difference
-  - We **cannot** tell the *size* of the difference (intervals between ranks could differ)
+  - We **can** tell the _direction_ of the difference
+  - We **cannot** tell the _size_ of the difference (intervals between ranks could differ)
   - We **should be aware** calculating averages for ordinal variables (different results with shifted encoding systems)
 - **An Interval** or **Ratio** scales: measuring **quantitative** variables only
   - Preserves **the order** between values and has **well-defined intervals** using real numbers
@@ -1123,7 +1115,7 @@ Examples:
 ### Frequency Distributions
 
 - **Frequency Distribution Table** shows how frequencies are distributed
-- **Grouped Frequency Distribution Talbes**: each group (interval) is called a *class interval*
+- **Grouped Frequency Distribution Talbes**: each group (interval) is called a _class interval_
   - `s.value_counts(bins=intervals)`
   - `pd.interval_range(start=0, end=100, freq=10)`
   - there should be a good balance between information and comprehensibility
@@ -1143,7 +1135,7 @@ Percentiles and Quartiles:
 - **Percentile** and percentile rank are related terms, but percentile is measured in percentages
   - `from scipy.stats import percentileofscore`
   - `percentileofscore(a=series, score=value, kind='weak')`
-- **Quartiles**: the *three* percentiles, 25th (lower quartile), the 50th (middle quartile), and the 75th (upper quartile), that divide the distribution in *four* equal parts `# s.describe(percentiles=[])`
+- **Quartiles**: the _three_ percentiles, 25th (lower quartile), the 50th (middle quartile), and the 75th (upper quartile), that divide the distribution in _four_ equal parts `# s.describe(percentiles=[])`
 
 <br>
 
@@ -1160,10 +1152,10 @@ Types of Distributions:
 
 Visualizing Distributions:
 
-- *Nominal* and *Ordinal* variables is common to visualize using **bar plot**, **pie chart** (better sense for the relative frequencies)
-- The most commonly used graph for visualizing *distributions* is the **histogram**
-- Smoothed histogram that display *densities* (probabilities) instead of frequencies is called **Kernel Density Estimate** (KDE) plot
-- When we need to compare *multiple* (> 4) distributions, it is better to use **strip plot** or **box plot**
+- _Nominal_ and _Ordinal_ variables is common to visualize using **bar plot**, **pie chart** (better sense for the relative frequencies)
+- The most commonly used graph for visualizing _distributions_ is the **histogram**
+- Smoothed histogram that display _densities_ (probabilities) instead of frequencies is called **Kernel Density Estimate** (KDE) plot
+- When we need to compare _multiple_ (> 4) distributions, it is better to use **strip plot** or **box plot**
   - **Quartiles**
     - Lower quartile index: $Qi_1 = (n+1) * 0.25$
     - Upper quartile index: $Qi_3 = (n+1) * 0.75$
@@ -1171,7 +1163,6 @@ Visualizing Distributions:
   - **Outliers** are values in the distribution that are much larger or much lower than the rest of the values
     - Lower bound: $\min = Q_1 - 1.5* \text{IQR}$
     - Upper bound: $\max = Q_3 + 1.5 * \text{IQR}$
-
 
 <br>
 
